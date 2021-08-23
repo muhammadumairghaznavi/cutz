@@ -1,0 +1,195 @@
+::-moz-selection {
+  color: #fff;
+  background-color: #ad1e35;
+}
+::selection {
+  color: #fff;
+  background-color: #ad1e35;
+}
+
+.home-slider .item-txt .fade-text:after {
+  content: unset;
+}
+
+.sec-slider {
+  background-color: #fff;
+}
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#searchList .dropdown-menu,
+.selectric .button,
+.selectric,
+.signup-form,
+.page-signup,
+.page-wishlist,
+.payment-checkout .form-control,
+.signup-form form input,
+.page-checkout,
+.right-header .actions-mobile .menu-cart ul,
+.page-profile,
+.right-header .actions-mobile .menu-logins li.hr-or,
+.right-header .actions-mobile .menu-logins,
+.mega_menu,
+.dropdown_menu,
+.page-gallery-single,
+.page-galleries,
+.page-blog-single,
+.page-blogs,
+.page-single,
+.item-product,
+.item-product:hover .add-cart,
+.form-contact form .form-control,
+.page-shop,
+.page-sup-catgs,
+.page-contact,
+footer,
+.sec-about,
+.form-search-header,
+header {
+  background-color: #000;
+}
+
+.page-login .login-with-social strong,
+.selectric .button,
+.signup-form form input,
+.page-wishlist table td h2,
+.table td, .table th,
+.page-wishlist table td a, .page-wishlist table td p,
+.page-wishlist table thead th,
+.total-prices,
+.address-details .title strong,
+.address-details p,
+.selectric .label,
+.payment-checkout .form-control,
+label,
+.table thead th,
+.profile-details form label,
+.sidebar-profile ul li a,
+.right-header .actions-mobile .menu-logins li.hr-or,
+.dropdown_menu a,
+.mega_menu ul>li>ul>li>a,
+.item-catgy-gallery a strong,
+.title-blog,
+.min-add-button .adults,
+.page-add-cart strong,
+.product-details strong,
+.bbq span,
+.title-prod strong.h4,
+.aside-filter li strong,
+.sidebar article .custom-control-label,
+.sidebar article h4,
+.rating span,
+.item-product .title,
+.item-sup-catgs strong,
+.chk-captcha .num-captcha,
+.form-contact form .form-control,
+.info-contact .item,
+.close-search,
+.form-search-header strong,
+.right-header a,
+nav li a {
+  color: #fff;
+}
+
+.blog-txt,
+.info-blog,
+.txt p,
+.txt,
+.sec-about strong,
+.sec-about span,
+.sec-about p {
+  color: #fff !important;
+}
+
+.parallax-style {
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-search-header form .form-group input,
+.form-search-header form .form-group {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.block-vision.block-mission .title_color span {
+  color: var(--main) !important;
+}
+
+.copyright-footer {
+  background-color: rgba(10, 10, 10, 0.8);
+}
+
+.signup-form,
+.info-contact .item {
+  box-shadow: 0 0 10px #222;
+}
+
+.info-contact .item strong {
+  color: var(--main);
+}
+
+.form-contact form {
+  box-shadow: 0 0 10px #222;
+  border: 1px solid #222;
+}
+
+.item-sup-catgs strong {
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+}
+
+.item-product {
+  border: 1px solid #333;
+}
+
+.rating i {
+  color: #737373;
+}
+
+.aside-filter li strong {
+  background-color: #222;
+}
+
+.item-latest-blog {
+  box-shadow: 0 0 10px rgb(66 66 66 / 45%);
+}
+
+
+.right-header .actions-mobile .menu-logins,
+.dropdown_menu,
+.mega_menu {
+  border-top: 2px solid var(--main);
+  box-shadow: 0 2px 10px rgb(90, 90, 90, 0.30);
+}
+
+.right-header .actions-mobile .menu-logins li a {
+  color: #fff;
+  box-shadow: 0 2px 10px rgb(90, 90, 90, 0.30);
+  border-bottom: 0;
+}
+
+.form-search-header {
+  box-shadow: 0 0 10px rgb(103 103 103 / 40%);
+}
+
+/*.signup-form .selectric .label,*/
+/*.page-add-cart .selectric .label {*/
+/*    color: #000;*/
+/*}*/
+
+
+#searchList .dropdown-menu {
+    box-shadow: 0 0 10px rgb(255 255 255 / 20%);
+}

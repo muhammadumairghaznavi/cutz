@@ -1,0 +1,170 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+* {
+  letter-spacing: 0 !important;
+}
+html, body {
+  direction: rtl;
+}
+
+*
+{
+  /* font-family: 'Cairo',sans-serif !important; */
+  font-family: 'Almarai', sans-serif !important;
+}
+
+.fab, .far {
+  font-family: "Font Awesome 5 Brands" !important;
+}
+.fa, .far, .fas {
+  font-family: "Font Awesome 5 Free" !important;
+}
+
+.parallax-mirror,
+.slick-slider,
+.swiper-container,
+.owl-carousel {
+  direction: ltr;
+}
+
+[type=email],
+[type=number],
+[type=tel],
+[type=url] {
+  direction: ltr
+}
+
+.home-slider .item-txt {
+    left: auto;
+    width: 100%;
+    right: 50%;
+    text-align: right !important;
+    padding: 0 2rem;
+}
+.home-slider .item-txt p {
+    margin-left: auto;
+}
+.home-slider .item-txt .fade-text:after {
+    content: unset;
+}
+.sec-checkout,
+.page-profile,
+.page-blog-single,
+.page-blogs,
+.page-single,
+.sidebar,
+.selectric-wrapper,
+.sec-about,
+.sec-seafood-packaged .txt,
+.sec-poultry-packaged .txt,
+.sec-meat-packaged .txt,
+.right-header {
+  text-align: right !important;
+}
+
+.selectric .button,
+.form-search-header button,
+.right-header .actions-mobile .menu-cart {
+  right: auto;
+  left: 0;
+}
+.right-header .actions-mobile .menu-cart .item .del-item {
+  right: auto;
+  left: 10px;
+}
+
+.sec-seafood-packaged .row,
+.sec-poultry-packaged .row,
+.sec-meat-packaged .row {
+  flex-direction: row-reverse;
+}
+.sec-seafood-packaged .container-fluid,
+.sec-poultry-packaged .container-fluid,
+.sec-meat-packaged .container-fluid {
+  max-width: 1170px;
+}
+
+.sec-seafood-packaged .txt strong.h1,
+.sec-meat-packaged .txt strong.h1 {
+  line-height: 1.5em;
+}
+.sec-poultry-packaged .txt strong.h1 {
+  font-size: 50px;
+  line-height: 1.5em;
+}
+
+.copyright-footer {
+  text-align: center;
+}
+
+.sec-about .txt-about h1::after {
+  left: auto;
+  right: 0;
+}
+
+.product-desc .items > .item h3 i,
+.aside-filter li strong i {
+  float: left;
+}
+.float-left {
+  float: right!important;
+}
+.float-right {
+  float: left!important;
+}
+
+.sidebar .sortby .custom-control-label::before {
+  left: -1.5rem;
+  right: auto;
+}
+.sidebar .sortby .custom-control-label::after {
+  left: -1.6rem;
+  right: auto;
+}
+
+.sidebar .sortby .custom-control {
+  padding-left: 1.5rem;
+  padding-right: 0;
+}
+
+.mr-3, .mx-3 {
+  margin-right: 0rem!important;
+  margin-left: 1rem!important;
+}
+
+.breadcrumb-pages ul {
+  padding-left: 0;
+  padding-right: 4rem;
+}
+
+.signup-form form .custom-control-label::after,
+.signup-form form .custom-control-label::before {
+  left: auto;
+  right: -1.5rem;
+}
+
+.btn-status {
+  right: auto;
+  left: 50px;
+}
+
+.li-promocode button,
+.order-delevary-times .item-time:not(:last-child)::after {
+  right: auto;
+  left: 0;
+}
+
+.box-cart .item .txt {
+  padding-left: 0;
+  padding-right: .5rem;
+}
+.li-promocode input {
+  padding-right: 0;
+  padding-left: 7rem;
+}
+
+nav,
+.mega_menu ul {
+    text-align: justify;
+}

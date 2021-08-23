@@ -1,0 +1,723 @@
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [35]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [19]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [27]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [26]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [25]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [17]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [17]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [42]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [41]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [23]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [20]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [15]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [14]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [14]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [14]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [43]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [28]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [21]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [16]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [13]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [13]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [13]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [12]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [11]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [11]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [11]
+
+[2021-07-25 17:31:11]
+select * from `setting_translations` where `setting_translations`.`setting_id` = ? and `setting_translations`.`setting_id` is not null [1]
+
+[2021-07-25 17:31:11]
+select * from `rates` where `rates`.`product_id` = ? and `rates`.`product_id` is not null and `rates`.`deleted_at` is null [326]
+
+[2021-07-25 17:31:11]
+select * from `product_translations` where `product_translations`.`product_id` = ? and `product_translations`.`product_id` is not null [326]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [159]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [109]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [108]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [42]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [43]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [43]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [156]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [42]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [42]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [155]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [41]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [41]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [145]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [35]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [35]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [39]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [34]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [28]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [28]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [27]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [27]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [161]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [26]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [26]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [160]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [25]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [25]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [101]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [23]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [23]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [57]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [21]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [21]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [112]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [20]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [20]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [127]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [29]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [19]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [154]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [126]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [125]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [111]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [110]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [107]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [106]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [105]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [104]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [103]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [102]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [54]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [51]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [47]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [46]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [45]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [16]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [16]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [138]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [15]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [15]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [113]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [16]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [14]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [14]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [142]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [68]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [13]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [13]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [146]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [62]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [61]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [60]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [59]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [58]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [12]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [12]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [153]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [152]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [151]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [150]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [144]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [143]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [70]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [69]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [67]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [66]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [65]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [64]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [63]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [11]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [11]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [145]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [35]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [35]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [19]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [27]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [27]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [161]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [26]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [26]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [160]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [25]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [25]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [17]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [17]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [156]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [42]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [42]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [155]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [41]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [41]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [101]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [23]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [23]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [112]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [20]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [20]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [127]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [29]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [19]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [19]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [138]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [15]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [15]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [113]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [16]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [14]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [14]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [14]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [14]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [159]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [109]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [108]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [42]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [43]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [43]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [39]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [34]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [28]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [28]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [57]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [21]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [21]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [154]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [126]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [125]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [111]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [110]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [107]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [106]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [105]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [104]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [103]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [102]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [54]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [51]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [47]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [46]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [45]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [16]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [16]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [13]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [13]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [142]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [68]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [13]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [13]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [146]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [62]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [61]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [60]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [59]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [58]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [12]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [12]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [153]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [152]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [151]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [150]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [144]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [143]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [70]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [69]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [67]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [66]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [65]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [64]
+
+[2021-07-25 17:31:11]
+select * from `sub_category_translations` where `sub_category_translations`.`sub_category_id` = ? and `sub_category_translations`.`sub_category_id` is not null [63]
+
+[2021-07-25 17:31:11]
+select * from `sub_categories` where `sub_categories`.`category_id` = ? and `sub_categories`.`category_id` is not null and `sub_categories`.`deleted_at` is null [11]
+
+[2021-07-25 17:31:11]
+select * from `category_translations` where `category_translations`.`category_id` = ? and `category_translations`.`category_id` is not null [11]
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`section_id` = ? and `categories`.`section_id` is not null and `categories`.`deleted_at` is null [11]
+
+[2021-07-25 17:31:11]
+select * from `section_translations` where `section_translations`.`section_id` = ? and `section_translations`.`section_id` is not null [11]
+
+[2021-07-25 17:31:11]
+select * from `tag_translations` where `tag_translations`.`tag_id` = ? and `tag_translations`.`tag_id` is not null [11]
+
+[2021-07-25 17:31:11]
+select * from `tag_translations` where `tag_translations`.`tag_id` = ? and `tag_translations`.`tag_id` is not null [2]
+
+[2021-07-25 17:31:11]
+select * from `tag_translations` where `tag_translations`.`tag_id` = ? and `tag_translations`.`tag_id` is not null [1]
+
+[2021-07-25 17:31:11]
+select * from `products` where (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`title` LIKE ?) or (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`description` LIKE ?))) and stock>0 and `status` = ? and `products`.`deleted_at` is null order by `created_at` desc limit 12 offset 0 [%Chilled SA Beef Silverside Steak%, %Chilled SA Beef Silverside Steak%, active]
+
+[2021-07-25 17:31:11]
+select count(*) as aggregate from `products` where (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`title` LIKE ?) or (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`description` LIKE ?))) and stock>0 and `status` = ? and `products`.`deleted_at` is null [%Chilled SA Beef Silverside Steak%, %Chilled SA Beef Silverside Steak%, active]
+
+[2021-07-25 17:31:11]
+select * from `tags` limit 10 []
+
+[2021-07-25 17:31:11]
+select * from `categories` where `categories`.`deleted_at` is null limit 20 []
+
+[2021-07-25 17:31:11]
+select min(`price`) as aggregate from `products` where `products`.`deleted_at` is null []
+
+[2021-07-25 17:31:11]
+select max(`price`) as aggregate from `products` where `products`.`deleted_at` is null []
+
+[2021-07-25 17:31:11]
+select * from `sections` where `sections`.`deleted_at` is null limit 20 []
+
+[2021-07-25 17:31:11]
+select * from `product_translations` where `product_translations`.`product_id` = ? and `product_translations`.`product_id` is not null [326]
+
+[2021-07-25 17:31:11]
+select * from `products` where (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`title` LIKE ?) or (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`description` LIKE ?))) and stock>0 and `status` = ? and `products`.`deleted_at` is null order by `created_at` desc limit 20 [%Chilled SA Beef Silverside Steak%, %Chilled SA Beef Silverside Steak%, active]
+
+[2021-07-25 17:31:11]
+select * from `product_translations` where `product_translations`.`product_id` = ? and `product_translations`.`product_id` is not null [326]
+
+[2021-07-25 17:31:11]
+select * from `products` where (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`title` LIKE ?) or (exists (select * from `product_translations` where `products`.`id` = `product_translations`.`product_id` and `product_translations`.`description` LIKE ?))) and stock>0 and `status` = ? and `products`.`deleted_at` is null order by `created_at` desc limit 20 [%Chilled SA Beef Silverside Steak%, %Chilled SA Beef Silverside Steak%, active]
+
