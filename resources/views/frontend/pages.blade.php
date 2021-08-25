@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title_page')
- 
+
 @lang('site.'.$type)
 @php
 $page='';

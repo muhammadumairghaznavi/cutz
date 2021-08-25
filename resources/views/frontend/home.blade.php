@@ -260,6 +260,7 @@
                                 <i class="icon-certification"></i>
                                 <strong>International quality <br> certificates</strong>
                             </a>
+
                         </div>
                         <div class="text-center">
                             <!--<a href="{{ route('page', ['type' => 'professionalCutting']) }}">-->
