@@ -122,7 +122,7 @@
 
         .carousel-control-next>i,
         .carousel-control-prev>i {
-            background-color: rgb(173 30 49);
+            
             padding: 1.4rem
         }
 

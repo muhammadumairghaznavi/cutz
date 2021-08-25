@@ -117,14 +117,8 @@ class ReviewController extends Controller
         $fourStarReviews = Review::where("review", 4)->count();
         $fiveStarReviews = Review::where("review", 5)->count();
         // dd($count_Reviews);
-        if(!(authCustomer())){
-            alert()->message('Please login first to give review');
-            return redirect()->route('customer.login');
-        }
-        else{
-
-            return view('frontend.rateus', compact('twoStarReviews','threeStarReviews','count_Reviews', 'oneStarReviews', 'fourStarReviews','fiveStarReviews'));
-        }
+        return view('frontend.rateus', compact('twoStarReviews','threeStarReviews','count_Reviews', 'oneStarReviews', 'fourStarReviews','fiveStarReviews'));
+        
         // dd(authCustomer()->id);
 
     }
@@ -145,7 +139,6 @@ class ReviewController extends Controller
         else{
             $review = new Review();
 
-            $review->customer_id = $request->customer_id;
             $review->review = $request->review;
             $review->comment = $request->comment;
 
@@ -153,7 +146,7 @@ class ReviewController extends Controller
 
             // SweetAlert::message('Successfully submitted review');
             // alert()->warning('WarningAlert','Lorem ipsum dolor sit amet.');
-            alert()->message('Your review has been submitted');
+            alert()->message('Thank you for your Review, Have a wonderful day.');
 
             return redirect()->route('home');
         }

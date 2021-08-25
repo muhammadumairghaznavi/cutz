@@ -29,7 +29,7 @@
 
     <body>
         <div class="container">
-            <h1 class="mt-5 mb-5">Please write review for us</h1>
+            <h1 class="mt-5 mb-5">Please Let us know what you think.</h1>
             <div class="card">
                 <div class="card-header">Review Form</div>
                 <div class="card-body">
@@ -44,9 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <h3><span id="total_review">{{ $count_Reviews }}</span> Reviews</h3>
-                </div>
+               
             </div>
             <div class="mt-5" id="review_content"></div>
         </div>
@@ -73,10 +71,7 @@
                             <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
                             <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
                         </h4>
-                        <div class="form-group">
-                            <input type="text" name="customer_id" id="user_name" class="form-control"
-                                value="{{ authCustomer()->id }}" hidden />
-                        </div>
+                        
                         <div class="form-group">
                             <input type="text" name="review" id="review_num" class="form-control" hidden />
                         </div>

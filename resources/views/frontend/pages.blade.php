@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title_page')
-
+ 
 @lang('site.'.$type)
 @php
 $page='';
@@ -26,7 +26,7 @@ $page='';
 
         <div class="item-certifications">
           <div class="row">
-            <div class="col-md-4">
+            <!--<div class="col-md-4">
             @if($item->link)
                 <a data-fancybox class="a_vid" href="{{$item->link}}">
                  <img src="{{$item->image_path}}" class="img-fluid" alt="image">
@@ -37,9 +37,9 @@ $page='';
                 <img src="{{$item->image_path}}" class="img-fluid" alt="image">
               </div>
               @endif
-            </div>
-            <div class="col-md-8">
-              <div class="txt">
+            </div>-->
+            <div class="col-md-12">
+              <div class="text-center">
                 <h1>{{$item->title}}</h1>
                 <p class="lead">
                     {!!$item->description!!}

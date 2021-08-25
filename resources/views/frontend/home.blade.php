@@ -204,7 +204,55 @@
             </div>
         </section>
         <!-- //END => Seafood packaged -->
+<section class="sec-care-customers parallax-window-two" data-speed=".2" data-parallax="scroll"
+            data-image-src="{{ url('/') }}/frontend/assets/imgs/bg.jpeg"
+            style="background-size: cover; display: grid; align-items: center; justify-content: center; height: 100vh;">
 
+            <div class="txt text-center">
+                <strong class="title h1 d-block">Our Client Say</strong>
+            </div>
+            <div class="container"
+                style="box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); border-radius: 5px; background-color: rgba(255, 255, 255, .15); backdrop-filter: blur(5px);">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach ($reviews as $key => $slider)
+
+                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                <div class="carousel-caption">
+
+
+                                    <h5 class="txt">“{{ $slider->comment }}”</h5>
+
+                                    @foreach (range(1, 5) as $i)
+                                        <span class="fa-stack" style="width:1em; color:rgb(173 30 49)">
+                                            <i class="far fa-star fa-stack-1x"></i>
+
+                                            @if ($slider->review > 0)
+                                                @if ($slider->review > 0.5)
+                                                    <i class="fas fa-star fa-stack-1x" style="color:rgb(173 30 49)"></i>
+                                                @else
+                                                    <i class="fas fa-star-half fa-stack-1x" style="color:rgb(173 30 49)"></i>
+                                                @endif
+                                            @endif
+                                            @php $slider->review--; @endphp
+                                        </span>
+                                    @endforeach
+                                    <br>
+                                    
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fas fa-arrow-left'></i>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right'></i> </a>
+                </div>
+            </div>
+            <div class="txt text-center">
+                <a href="{{url('reviews_page')}}" class="btn btn-primary">View All</a>
+
+            </div>
+        </section>
 
         <!-- START => Categories Site -->
         <section class="sec-catgs-sites parallax-window-two" data-speed=".2" data-parallax="scroll"
@@ -260,7 +308,6 @@
                                 <i class="icon-certification"></i>
                                 <strong>International quality <br> certificates</strong>
                             </a>
-
                         </div>
                         <div class="text-center">
                             <!--<a href="{{ route('page', ['type' => 'professionalCutting']) }}">-->
@@ -275,55 +322,6 @@
         </section>
         <!-- //END => Care for our Customers -->
 
-        <section class="sec-care-customers parallax-window-two" data-speed=".2" data-parallax="scroll"
-            data-image-src="{{ url('/') }}/frontend/assets/imgs/bg.jpeg"
-            style="background-size: cover; display: grid; align-items: center; justify-content: center; height: 100vh;">
-
-            <div class="txt text-center">
-                <strong class="title h1 d-block">Care for our Customers</strong>
-            </div>
-            <div class="container"
-                style="box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); border-radius: 5px; background-color: rgba(255, 255, 255, .15); backdrop-filter: blur(5px);">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        @foreach ($reviews as $key => $slider)
-
-                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <div class="carousel-caption">
-
-
-                                    <h5 class="txt">“{{ $slider->comment }}”</h5>
-
-                                    @foreach (range(1, 5) as $i)
-                                        <span class="fa-stack" style="width:1em; color:rgb(173 30 49)">
-                                            <i class="far fa-star fa-stack-1x"></i>
-
-                                            @if ($slider->review > 0)
-                                                @if ($slider->review > 0.5)
-                                                    <i class="fas fa-star fa-stack-1x" style="color:rgb(173 30 49)"></i>
-                                                @else
-                                                    <i class="fas fa-star-half fa-stack-1x" style="color:rgb(173 30 49)"></i>
-                                                @endif
-                                            @endif
-                                            @php $slider->review--; @endphp
-                                        </span>
-                                    @endforeach
-                                    <br>
-                                    <img src="https://i.imgur.com/lE89Aey.jpg">
-                                    <div class="txt" id="image-caption">“{{ $slider->customer->full_name }}”</div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fas fa-arrow-left'></i>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right'></i> </a>
-                </div>
-            </div>
-            <div class="txt text-center">
-                <a href="{{url('reviews_page')}}" class="btn btn-primary">View All</a>
-
-            </div>
-        </section>
+        
 
     @endsection

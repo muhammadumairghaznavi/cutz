@@ -21,7 +21,7 @@
     <section class="page-shop py-5">
         <div class="container">
             <div class="txt text-center">
-                <strong class="title h1 d-block">Our Clients Says</strong>
+                <strong class="title h1 d-block">Our Clients Say</strong>
             </div>
             <div class="row">
 
@@ -43,7 +43,7 @@
                                             src="https://img.icons8.com/bubbles/100/000000/edit-user.png"> </div>
                                     <div class="col-sm-10">
                                         <div class="profile">
-                                            <h4 class="cust-name">{{ $item->customer->full_name }}</h4>
+                                            
                                             <p class="cust-profession">
 
                                                 @foreach (range(1, 5) as $i)
