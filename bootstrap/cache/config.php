@@ -211,7 +211,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home2/cutzcom/public_html/storage/framework/cache/data',
+        'path' => 'C:\\xampp71\\htdocs\\cutz\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -251,7 +251,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'cutzcom_db',
+        'database' => 'cutz',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -260,9 +260,9 @@
         'driver' => 'mysql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'cutzcom_db',
-        'username' => 'cutzcom_db',
-        'password' => 'cutzcom_db',
+        'database' => 'cutz',
+        'username' => 'root',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -276,9 +276,9 @@
         'driver' => 'pgsql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'cutzcom_db',
-        'username' => 'cutzcom_db',
-        'password' => 'cutzcom_db',
+        'database' => 'cutz',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -290,9 +290,9 @@
         'driver' => 'sqlsrv',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'cutzcom_db',
-        'username' => 'cutzcom_db',
-        'password' => 'cutzcom_db',
+        'database' => 'cutz',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -328,10 +328,10 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
-      'font_dir' => '/home2/cutzcom/public_html/storage/fonts/',
-      'font_cache' => '/home2/cutzcom/public_html/storage/fonts/',
-      'temp_dir' => '/tmp',
-      'chroot' => '/home2/cutzcom/public_html',
+      'font_dir' => 'C:\\xampp71\\htdocs\\cutz\\storage\\fonts/',
+      'font_cache' => 'C:\\xampp71\\htdocs\\cutz\\storage\\fonts/',
+      'temp_dir' => 'C:\\Users\\umair\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\xampp71\\htdocs\\cutz',
       'enable_font_subsetting' => false,
       'pdf_backend' => 'CPDF',
       'default_media_type' => 'screen',
@@ -341,7 +341,7 @@
       'enable_php' => false,
       'enable_javascript' => true,
       'enable_remote' => true,
-      'font_height_ratio' => 1.100000000000000088817841970012523233890533447265625,
+      'font_height_ratio' => 1.1,
       'enable_html5_parser' => false,
     ),
   ),
@@ -409,7 +409,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => '/tmp',
+      'local_path' => 'C:\\Users\\umair\\AppData\\Local\\Temp',
       'remote_disk' => NULL,
     ),
   ),
@@ -422,19 +422,19 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home2/cutzcom/public_html/storage/app',
+        'root' => 'C:\\xampp71\\htdocs\\cutz\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home2/cutzcom/public_html/storage/app/public',
+        'root' => 'C:\\xampp71\\htdocs\\cutz\\storage\\app/public',
         'url' => 'http://localhost/cutz/storage',
         'visibility' => 'public',
       ),
       'public_uploads' => 
       array (
         'driver' => 'local',
-        'root' => '/home2/cutzcom/public_html/public/uploads',
+        'root' => 'C:\\xampp71\\htdocs\\cutz\\public\\uploads',
       ),
       's3' => 
       array (
@@ -619,13 +619,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home2/cutzcom/public_html/storage/logs/laravel.log',
+        'path' => 'C:\\xampp71\\htdocs\\cutz\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home2/cutzcom/public_html/storage/logs/laravel.log',
+        'path' => 'C:\\xampp71\\htdocs\\cutz\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -689,7 +689,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home2/cutzcom/public_html/resources/views/vendor/mail',
+        0 => 'C:\\xampp71\\htdocs\\cutz\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -799,7 +799,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home2/cutzcom/public_html/storage/framework/sessions',
+    'files' => 'C:\\xampp71\\htdocs\\cutz\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -854,8 +854,8 @@
   array (
     'paths' => 
     array (
-      0 => '/home2/cutzcom/public_html/resources/views',
+      0 => 'C:\\xampp71\\htdocs\\cutz\\resources\\views',
     ),
-    'compiled' => '/home2/cutzcom/public_html/storage/framework/views',
+    'compiled' => 'C:\\xampp71\\htdocs\\cutz\\storage\\framework\\views',
   ),
 );

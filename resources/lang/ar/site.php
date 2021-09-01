@@ -131,7 +131,7 @@ return [
     'link_download' => 'رابط تحميل',
     'useful_information' => 'معلومات  ',
 
-    'Elite Products' => 'منتجات متميزة',
+    'Elite_Products' => 'منتجات متميزة',
     'shop' => 'الأقسام',
     'footer_slug' => ' Cutz has been operating trustfully in the market since 1996 under the umbrella of HG by providing the finest ',
     'footer_slug2' => 'quality meat products',

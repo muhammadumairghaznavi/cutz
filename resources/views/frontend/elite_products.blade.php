@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title_page')
-@lang('site.Elite Products')
+@lang('site.Elite_Products')
 @php
 $page='elite_products';
 @endphp
@@ -8,11 +8,11 @@ $page='elite_products';
 @section('content')
 <!-- START => Breadcrumb -->
 <div class="breadcrumb-pages" style="background-image: url({{url('/')}}/frontend/assets/imgs/bg-pages.jpg)">
-    <strong class="h1 d-block">@lang('site.Elite Products')</strong>
+    <strong class="h1 d-block">@lang('site.Elite_Products')</strong>
     <ul>
         <li><a href="{{route('home')}}">@lang('site.home')</a></li>
         <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
-        <li><a href="{{route('elite_products')}}">@lang('site.Elite Products')</a></li>
+        <li><a href="{{route('elite_products')}}">@lang('site.Elite_Products')</a></li>
     </ul>
 </div>
 <!-- //END => Breadcrumb -->

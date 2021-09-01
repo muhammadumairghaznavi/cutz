@@ -13,6 +13,9 @@ return [
     |
     */
     'points' => 'shoud greater than price ',
+    'phone' => 'Please enter your Telephone Number',
+    'name' => 'Please enter your name',
+    'captcha' => 'Captcha',
 
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',

@@ -185,7 +185,7 @@ $page='shop';
                                 </div>
                                 <a href="{{route('product_details',['id'=>$item->id,'slug'=>make_slug($item->title)])}}"
                                     class="title">{{$item->title}}</a>
-                                <div class="rating">
+                                {{-- <div class="rating">
                                     @for($star=1 ; $star<=$item->AvgRate;$star ++)
                                         <i class="fas fa-sm fa-star active"></i>
                                         @endfor
@@ -193,7 +193,7 @@ $page='shop';
                                             class="fas fa-sm fa-star"></i>
                                             @endfor
                                             <span>({{$item->rates->count()}} @lang('site.rates'))</span>
-                                </div>
+                                </div> --}}
                                 <h3 class="prices">
                                     <span>{{$item->total}} {{__('site.'.currncy())}}</span>
                                     @if($item->discount)

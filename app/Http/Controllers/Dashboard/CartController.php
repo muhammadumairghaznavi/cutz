@@ -28,7 +28,8 @@ class CartController extends Controller
     } //end of index
     public function create()
     {
-        return view('dashboard.carts.create');
+        dd('as');
+        //return view('dashboard.carts.create');
     } //end of create
     public function store(Request $request)
     {

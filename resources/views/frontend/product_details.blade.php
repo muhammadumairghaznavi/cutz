@@ -115,15 +115,7 @@ $page='';
                                 @endif
                             </div>
                         </div>
-                        <div class="rating">
-                            @for($star=1 ; $star<=$product->AvgRate;$star ++)
-                                <i class="fas fa-sm fa-star active"></i>
-                                @endfor
-                                @for($star_off=$product->AvgRate ; $star_off< 5 ;$star_off++) <i
-                                    class="fas fa-sm fa-star"></i>
-                                    @endfor
-                                    <span>({{$product->rates->count()}} @lang('site.rates'))</span>
-                        </div>
+
                         <h3 class="prices">
                             <span>{{$product->total}} {{__('site.'.currncy())}} </span>
                             @if($product->discount)

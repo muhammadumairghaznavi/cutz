@@ -122,7 +122,7 @@
 
         .carousel-control-next>i,
         .carousel-control-prev>i {
-            
+
             padding: 1.4rem
         }
 
@@ -297,9 +297,7 @@
                         <li>
                             <!-- Sidebar Menu -->
                             <div class="menu-nav" id="sidemenunav">
-                                <span class="toggle-nav-desc">
-                                    <i class="fa fa-bars"></i>
-                                </span>
+
                                 <nav id="main-nav2">
                                     <ul id="main-menu2">
 
@@ -333,8 +331,12 @@
                                 class="{{ $page == 'home' ? 'active' : '' }}">@lang('site.home')</a>
                         </li>
 
-                        <li><a href="{{ route('about') }}" class="{{ $page == 'abouts' ? 'active' : '' }} ">About
-                                CUT<strong>Z</strong></a>
+                        <li class="has_dropdown">
+                            <a href="javascript:void(0)">About CUT<strong>Z</strong></a>
+                                <ul class="dropdown_menu in_drb">
+                                    <li><a href="{{ route('about') }}">About CUT<strong>Z</strong></a></li>
+                                    <li><a href="{{ route('reviews_page')}}">Reviews</a></li>
+                                </ul>
                         </li>
                         <li class="has-dropdown {{ $page == 'shop' ? 'active' : '' }}">
                             <a href="javascript:void(0)">@lang('site.shop')</a>
@@ -366,8 +368,7 @@
             class="{{ $page=='shop'?'active':'' }}
             ">@lang('site.shop')</a></li> --}}
                         <li><a href="{{ route('elite_products') }}"
-                                class="{{ $page == 'elite_products' ? 'active' : '' }} ">@lang('site.Elite
-                                Products')</a>
+                                class="{{ $page == 'elite_products' ? 'active' : '' }} ">@lang('site.Elite_Products')</a>
                         </li>
                         <!-- <li><a href="{{ route('galleries') }}"
                 class="{{ $page == 'galleries' ? 'active' : '' }} ">@lang('site.galleries')</a>
@@ -392,8 +393,7 @@
                         <li><a href="{{ route('contact') }}"
                                 class="{{ $page == 'contact' ? 'active' : '' }} ">@lang('site.contact')</a>
                         </li>
-                        <li><a href="{{ route('reviews_page')}}"
-                            class="{{ $page == 'reviews_page' ? 'active' : ''}}">Reviews</a></li>
+
 
                     </ul>
                 </nav>

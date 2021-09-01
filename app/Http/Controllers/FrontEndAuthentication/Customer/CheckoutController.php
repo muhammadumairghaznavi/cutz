@@ -140,7 +140,7 @@ class CheckoutController extends Controller
                 'discount' => $promocode->discount($sum),
                 'subtotal' => $promocode->subtotal($sum),
             ]);
-            session()->flash('success', __('site.done_successfuly'));
+            session()->flash('success', 'Done Successfuly');
         }
         return redirect()->back();
     } //end of applyPromo
@@ -240,7 +240,7 @@ class CheckoutController extends Controller
             Cart::where('customer_id', authCustomer()->id)->delete();
             $this->update_payment_status();
             $this->RemoveAllSession();
-            session()->flash('success', __('site.done_successfuly'));
+            session()->flash('success', 'Done Successfuly');
 
 
 
@@ -387,7 +387,7 @@ class CheckoutController extends Controller
         $this->update_payment_status();
         Cart::where('customer_id', authCustomer()->id)->delete();
         $this->RemoveAllSession();
-        session()->flash('success', __('site.done_successfuly'));
+        session()->flash('success', 'Done Successfuly');
         return view('frontend.customer.profile.index');
     } //end of payemnt_online_done
 

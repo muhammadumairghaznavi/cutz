@@ -57,7 +57,7 @@ class ContactRequest extends FormRequest
             'phone.required' => __('validation.phone'),
             'email.required' => __('validation.email'),
             'message.required' => __('site.message'),
-            'result.required' => __('ادخل حاصل الجمع'),
+            'result.required' => __('site.captcha'),
         ];
         return $msg;
     }

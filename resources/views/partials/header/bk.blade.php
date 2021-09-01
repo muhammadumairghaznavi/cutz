@@ -7,7 +7,7 @@ $headerCarts = App\Cart::where('customer_id', authCustomer()->id)->latest()->get
 }
 @endphp
 
- 
+
 <div class="right-header d-flex align-items-center">
   <div class="actions-mobile d-flex align-items-center">
 
@@ -55,11 +55,11 @@ $headerCarts = App\Cart::where('customer_id', authCustomer()->id)->latest()->get
             $sumCartAndDetail=0;
             @endphp
             @foreach ($headerCarts as $cart)
-            
+
             @php
-            \Log::info( print_r($cart,true) ); 
+            \Log::info( print_r($cart,true) );
             @endphp
-            
+
             <div class="item">
               <div class="img">
                 <img src="{{$cart->product->image_path}}" class="img-fluid" alt="">

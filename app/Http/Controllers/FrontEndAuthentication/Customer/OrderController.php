@@ -213,7 +213,7 @@ class OrderController extends Controller
                 'discount' => $promocode->discount($invoice->total),
                 'subtotal' => $promocode->subtotal($invoice->total),
             ]);
-            session()->flash('success', __('site.done_successfuly'));
+            session()->flash('success', 'Done Successfuly');
         }
         return redirect()->back();
     } //end of promoCode
@@ -309,7 +309,7 @@ class OrderController extends Controller
         $this->create_invoice(); //create invoice
         $this->IncreasePromoUser(session()->get('coupon')['name']);  //increament count user coupon
 
-        session()->flash('success', __('site.done_successfuly'));
+        session()->flash('success', 'Done Successfuly');
         return redirect()->route('customer.order.congratulation');
     } //end of orderSuccess
 
