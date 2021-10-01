@@ -108,10 +108,10 @@ class HomeController extends Controller
 
     public function recipes()
     {
-
-        $blogs = Blogs::Recipes()->latest()->paginate($this->PaginateNumber);
-        $page = 'recipes';
-        return view('frontend.blogs', compact('blogs', 'page'));
+        // $blogs = Blogs::Recipes()->latest()->paginate($this->PaginateNumber);
+        // $page = 'recipes';
+        // return view('frontend.blogs', compact('blogs', 'page'));
+        return view('frontend.recipes');
     } //end of Recipes
 
 

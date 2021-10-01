@@ -80,6 +80,9 @@ class Product extends Model
         return $this->hasMany(ProductWeight::class);
     } //end fo productWeights
 
+    public function weights(){
+        return $this->belongsToMany(Weight::class, 'product_weights', 'product_id', 'weight_id')->withPivot('price')->withTimestamps();
+    }
 
     public function collections()
     {
@@ -131,7 +134,7 @@ class Product extends Model
     public function getMainPriceAttribute()
     {
 
-        $price = $this->price + $this->discount;
+        $price = $this->price;
         return $price;
     } // end of MainPrice attribute
 

@@ -14,8 +14,14 @@
         <!-- START => Home Slider -->
         <section class="sec-slider">
             <div class="container-fluid">
-                <div id="slider-home" class="home-slider owl-carousel owl-theme">
-                    @foreach ($sliders as $item)
+                <!-- Block Item -->
+                <video autoplay muted playsinline loop style="pointer-events: none;  height: 100%; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    <source src="{{ 'farzana.mp4' }}" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- //=> Block Item -->
+                {{-- @foreach ($sliders as $item)
                         <!-- Block Item -->
                         <div class="item" style="background-image: url('{{ $item->image_path }}');">
                             <!--<img src="" class="img-fluid img-slide" alt="Image"> -->
@@ -36,8 +42,7 @@
                             </div>
                         </div>
                         <!-- //=> Block Item -->
-                    @endforeach
-                </div>
+                    @endforeach --}}
             </div>
         </section>
         <!-- //END => Home Slider -->
@@ -55,25 +60,26 @@
 
 
         <!-- START => Meat packaged -->
-        <!-- <section class="sec-meat-packaged bg-overlay parallax-window-two" data-speed=".2" data-parallax="scroll" data-image-src="{{ url('/') }}/frontend/assets/imgs/meat-bg-packages.jpg">
-                                      <div class="container-fluid">
-                                        <div class="row no-gutters">
-                                          <div class="col-md-7"></div>
-                                          <div class="col-md-5 d-flex align-items-center justify-content-center hvh-100">
-                                            <div class="txt">
-                                              <strong class="h1 d-block">
-                                                Meat is packaged in <span>various types</span> of containers
-                                              </strong>
-                                              <ul>
-                                                <li>Beef Meat: General cuts / Loin and Chuck</li>
-                                                <li>Veal Meet: General cuts / Loin and Chuck</li>
-                                                <li>Lamp Meat: Lamp Chops / Whole Lamp</li>
-                                              </ul>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </section> -->
+        <section class="sec-meat-packaged bg-overlay parallax-window-two" data-speed=".2" data-parallax="scroll"
+            data-image-src="{{ url('/') }}/frontend/assets/imgs/meats.jpeg">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-md-7"></div>
+                    <div class="col-md-5 d-flex align-items-center justify-content-center hvh-100">
+                        <div class="txt">
+                            <strong class="h1 d-block">
+                                Meat is packaged in <span>various types</span> of containers
+                            </strong>
+                            <ul>
+                                <li>Beef Meat: General cuts / Loin and Chuck</li>
+                                <li>Veal Meet: General cuts / Loin and Chuck</li>
+                                <li>Lamp Meat: Lamp Chops / Whole Lamp</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- //END => Meat packaged -->
         @if (count($bestSellers) > 0)
             <section class="sec-related sec_seller_bg py-5">
@@ -88,7 +94,8 @@
                                 <div class="img">
                                     <a
                                         href="{{ route('product_details', ['id' => $item->id, 'slug' => make_slug($item->title)]) }}"><img
-                                            src="{{ $item->image_path }}" class="img-fluid" alt="{{ $item->title }}"></a>
+                                            src="{{ $item->image_path }}" class="img-fluid"
+                                            alt="{{ $item->title }}"></a>
                                 </div>
                                 <a href="{{ route('product_details', ['id' => $item->id, 'slug' => make_slug($item->title)]) }}"
                                     class="title">{{ $item->title }}</a>
@@ -116,18 +123,10 @@
                                 </div>
                             </div>
                         @endforeach
-
-
-
-
                     </div>
-
                 </div>
             </section>
         @endif
-
-
-
         <!-- START => Poultry is packaged -->
         <section class="sec-poultry-packaged parallax-window-two" data-speed=".2" data-parallax="scroll"
             data-image-src="{{ url('/') }}/frontend/assets/imgs/breast-1-2.jpg">
@@ -135,11 +134,9 @@
                 <div class="row no-gutters">
                     <div class="col-md-5"></div>
                     <div class="col-md-7 d-flex align-items-center justify-content-center hvh-100">
-                        <div class="txt">
+                        <div class="txt" style="padding-top: 50px;">
                             <strong class="h1 d-block">
-                                Poultry is referred <br> to white and dark meat. <br>
-                                <span>Chicken, Turkey, Duck</span> and more, with wide variety of cuts according to<br>
-                                your preference.
+                                @lang('site.meats')
                             </strong>
                             <!--<ul>-->
                             <!--    <li>clean overall appearance, free from blemishes or bruises.</li>-->
@@ -152,7 +149,7 @@
         <!-- //END => Poultry is packaged -->
 
         <!-- START => Counter -->
-        <section class="sec-counter parallax-window-two" data-speed=".2" data-parallax="scroll"
+        {{-- <section class="sec-counter parallax-window-two" data-speed=".2" data-parallax="scroll"
             data-image-src="{{ url('/') }}/frontend/assets/imgs/bg-counter.jpg">
             <div class="container">
                 <div class="txt text-center">
@@ -161,15 +158,15 @@
                             <div class="counter-boxes row">
                                 <div class="col-md-6 text-center">
                                     <a href="{{ route('recipes') }}" class="counter-box">
-                                        <strong class="h1 d-block">{{ $countRecipes }}</strong>
-                                        <strong class="h6 d-block">Check Our Recipes</strong>
+                                        <strong class="h1 d-block">0</strong>
+                                        <strong class="h6 d-block">@lang('site.CheckOurRecipes')</strong>
                                     </a>
                                     <!--<a href="">Recipes</a>-->
                                 </div>
                                 <div class="col-md-6 text-center">
                                     <a href="{{ route('blogs') }}" class="counter-box">
                                         <strong class="h1 d-block">{{ $countUsefulInformation }}</strong>
-                                        <strong class="h6 d-block">Check Our Useful information</strong>
+                                        <strong class="h6 d-block">@lang('site.Check_Our_Useful_information')</strong>
                                     </a>
                                     <!--<a href="">Useful information</a>-->
                                 </div>
@@ -179,7 +176,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- //END => Counter -->
 
         <!-- START => Seafood packaged -->
@@ -189,10 +186,11 @@
                 <div class="row no-gutters">
                     <div class="col-md-6"></div>
                     <div class="col-md-6 d-flex align-items-center justify-content-center hvh-100">
-                        <div class="txt">
+                        <div class="txt" style="padding-top: 50px;">
                             <strong class="h1 d-block">
-                                Wide range of <span>seafood varieties</span> from the best spots all over the world to your
-                                dining table.
+                                {{-- Wide range of <span>seafood varieties</span> from the best spots all over the world to your
+                                dining table. --}}
+                                @lang('site.seafoodvariety')
                             </strong>
                             <!--<ul>-->
                             <!--    <li>Proud of providing premium fresh and carefully selected seafood and fish from the best spots-->
@@ -204,12 +202,12 @@
             </div>
         </section>
         <!-- //END => Seafood packaged -->
-<section class="sec-care-customers parallax-window-two" data-speed=".2" data-parallax="scroll"
+        <section class="sec-care-customers parallax-window-two" data-speed=".2" data-parallax="scroll"
             data-image-src="{{ url('/') }}/frontend/assets/imgs/bg.jpeg"
             style="background-size: cover; display: grid; align-items: center; justify-content: center; height: 100vh;">
 
             <div class="txt text-center">
-                <strong class="title h1 d-block">Our Client Say</strong>
+                <strong class="title h1 d-block">@lang('site.our_client_say')</strong>
             </div>
             <div class="container"
                 style="box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); border-radius: 5px; background-color: rgba(255, 255, 255, .15); backdrop-filter: blur(5px);">
@@ -238,7 +236,7 @@
                                         </span>
                                     @endforeach
                                     <br>
-                                    
+
                                 </div>
                             </div>
                         @endforeach
@@ -249,7 +247,7 @@
                 </div>
             </div>
             <div class="txt text-center">
-                <a href="{{url('reviews_page')}}" class="btn btn-primary">View All</a>
+                <a href="{{ url('reviews_page') }}" class="btn btn-primary">@lang('site.View_All')</a>
 
             </div>
         </section>
@@ -281,7 +279,7 @@
             data-image-src="{{ url('/') }}/frontend/assets/imgs/bg-care-customer.jpg">
             <div class="container-fluid d-flex justify-content-center align-items-center hvh-100">
                 <div class="txt text-center">
-                    <strong class="title h1 d-block">Care for our Customers</strong>
+                    <strong class="title h1 d-block">@lang('site.Our_Specialty')</strong>
                     <div class="care-icons d-flex align-items-center justify-content-between">
                         <div class="text-center">
 
@@ -290,7 +288,7 @@
                             <!--<a href="{{ route('page', ['type' => 'greenFeed']) }}">-->
                             <strong>
                                 <i class="icon-lamb"></i>
-                                <strong>green <br> feed</strong>
+                                <strong>@lang('site.greenFeed')</strong>
                             </strong>
                         </div>
                         <div class="text-center">
@@ -298,7 +296,7 @@
                             <!--<a href="{{ route('page', ['type' => 'convenientVacuum']) }}">-->
                             <strong>
                                 <i class="icon-box"></i>
-                                <strong>Convenient vacuum <br> packaging</strong>
+                                <strong>@lang('site.convenientVacuum')</strong>
                             </strong>
                         </div>
                         <div class="text-center">
@@ -306,14 +304,14 @@
                             <a href="{{ route('page', ['type' => 'internationalQualityCertificates']) }}">
 
                                 <i class="icon-certification"></i>
-                                <strong>International quality <br> certificates</strong>
+                                <strong>@lang('site.internationalQualityCertificates')</strong>
                             </a>
                         </div>
                         <div class="text-center">
                             <!--<a href="{{ route('page', ['type' => 'professionalCutting']) }}">-->
                             <strong>
                                 <i class="icon-cleaver-knife"></i>
-                                <strong>Professional <br> cutting</strong>
+                                <strong>@lang('site.professionalcutty')</strong>
                             </strong>
                         </div>
                     </div>
@@ -322,6 +320,6 @@
         </section>
         <!-- //END => Care for our Customers -->
 
-        
+
 
     @endsection

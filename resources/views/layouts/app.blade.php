@@ -332,10 +332,11 @@
                         </li>
 
                         <li class="has_dropdown">
-                            <a href="javascript:void(0)">About CUT<strong>Z</strong></a>
+                            <a href="javascript:void(0)">@lang('site.about') CUT<strong>Z</strong></a>
                                 <ul class="dropdown_menu in_drb">
-                                    <li><a href="{{ route('about') }}">About CUT<strong>Z</strong></a></li>
-                                    <li><a href="{{ route('reviews_page')}}">Reviews</a></li>
+
+                                    <li><a href="{{ route('reviews_page')}}">@lang('site.reviews')</a></li>
+                                    <li><a href="{{ route('careers.index')}}">@lang('site.career')</a></li>
                                 </ul>
                         </li>
                         <li class="has-dropdown {{ $page == 'shop' ? 'active' : '' }}">
@@ -441,17 +442,17 @@
                 </ul>
 
                 <div class="subscribe-form">
-                    <strong>Subscribe to our newsletter</strong>
+                    <strong>@lang('site.SUBSCRIBE_TO_OUR_NEWSLETTER')</strong>
                     <form action="{{ route('subscribe') }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('post') }}
-                        <input type="text" name="email" placeholder="Enter Email">
-                        <button class="btn-subscribe">Subscribe</button>
+                        <input type="text" name="email" placeholder="@lang('site.Enter_Email')">
+                        <button class="btn-subscribe">@lang('site.subscribe')</button>
                     </form>
                 </div>
 
                 <div class="app-downloading">
-                    <strong>Download app link</strong>
+                    <strong>@lang('site.Download_app_link')</strong>
                     <div class="d-flex align-items-center justify-content-center">
                         <a href="{{ $setting->link_android }}"><img
                                 src="{{ url('/') }}/frontend/assets/imgs/google-play.png" alt=""></a>
@@ -464,7 +465,7 @@
         </div>
         <div class="copyright-footer">
             <div class="container d-flex align-items-center justify-content-between">
-                <p class="m-0"> &copy; CUTZEGYPT™ All Rights Reserved - <?php echo date('Y'); ?></p>
+                <p class="m-0"> &copy; @lang('site.copyright') - <?php echo date('Y'); ?></p>
                 <ul class="d-flex align-items-center justify-content-between">
                     <li><a href="{{ route('privacies') }}">{{ __('site.privacies') }}</a></li>
                     <li><a href="{{ route('polices') }}">{{ __('site.polices') }}</a></li>
@@ -522,6 +523,26 @@
             });
 
         });
+    </script>
+
+    <script>
+        $('#login_form').show();
+        $('#guest_form').hide();
+        $('#login').hide();
+
+        $('#guestcheckout').on('click', function(){
+            $('#guest_form').show(1000);
+            $('#login_form').hide(1000);
+            $('#guestcheckout').hide(1000);
+            $('#login').show(1000);
+        });
+        $('#login').on('click', function(){
+            $('#login_form').show(1000);
+            $('#guest_form').hide(1000);
+            $('#login').hide(1000);
+            $('#guestcheckout').show(1000);
+        });
+
     </script>
 
 

@@ -13,6 +13,7 @@
         <li class=" @if($page =='dashboard')   active  @endif "><a href="{{ route('dashboard.index') }}"><i
         class="fa fa-th"></i><span>@lang('site.dashboard')</span></a></li>
             @foreach (getModels() as $index=>$section)
+
             @if (auth()->user()->hasPermission('read_'.$section))
             <li class=" @if($page ==$section)   active  @endif "><a
                     href="{{ route('dashboard.'.$section.'.index') }}"><i

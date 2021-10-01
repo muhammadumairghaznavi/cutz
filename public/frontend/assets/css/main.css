@@ -1374,7 +1374,7 @@ body.overlay::before {
     word-wrap: break-word;
     position: relative;
     z-index: 1;
-    top: 6px;
+    top: 16px;
 }
 
 .catgss-item:hover strong {

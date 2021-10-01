@@ -8,7 +8,7 @@
 @section('content')
     <!-- START => Breadcrumb -->
     <div class="breadcrumb-pages"
-        style="background-image: url({{ url('/') }}/frontend/assets/imgs/client-background-2.jpg)">
+        style="background-image: url({{ url('/') }}/frontend/assets/imgs/client-background-2.jpg);">
         <strong class="h1 d-block">@lang('site.Reviews Page')</strong>
         <ul>
             <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
@@ -43,7 +43,7 @@
                                             src="https://img.icons8.com/bubbles/100/000000/edit-user.png"> </div>
                                     <div class="col-sm-10">
                                         <div class="profile">
-                                            
+
                                             <p class="cust-profession">
 
                                                 @foreach (range(1, 5) as $i)

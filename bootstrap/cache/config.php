@@ -46,6 +46,7 @@
       29 => 'Barryvdh\\DomPDF\\ServiceProvider',
       30 => 'Laravel\\Passport\\PassportServiceProvider',
       31 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
+      32 => 'Collective\\Html\\HtmlServiceProvider',
     ),
     'aliases' => 
     array (
@@ -86,6 +87,8 @@
       'GeoIPLocation' => 'Victorybiz\\GeoIPLocation\\Facades\\GeoIPLocationFacade',
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
       'Alert' => 'UxWeb\\SweetAlert\\SweetAlert',
+      'Form' => 'Collective\\Html\\FormFacade',
+      'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
   'auth' => 

@@ -23,6 +23,7 @@
         "pusher/pusher-php-server": "^4.1",
         "santigarcor/laratrust": "5.0.*",
         "uxweb/sweet-alert": "^2.0",
+        "laravelcollective/html": "~5.0",
         "victorybiz/geoip-location": "^1.1"
     },
     "require-dev": {

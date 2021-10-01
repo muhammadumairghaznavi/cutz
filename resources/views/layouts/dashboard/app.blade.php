@@ -159,18 +159,6 @@
                     <ul class="nav navbar-nav">
                              @include('layouts.dashboard._bar_notification')
 
-
-
-
-
-
-
-
-
-
-
-
-
                         {{--<!-- Tasks: style can be found in dropdown.less -->--}}
                         <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-flag-o"></i></a>

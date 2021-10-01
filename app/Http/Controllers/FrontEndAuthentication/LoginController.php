@@ -21,10 +21,15 @@ class LoginController extends Controller
     public function index()
     {
         if (authCustomer() != null) {
-            session()->flash('success', __('site.Successfully Login'));
-            return redirect()->route('home');
+            if(authCustomer()->type == 'guest'){
+                session()->flash('success', __('site.guestcheckoutenabled'));
+                return redirect()->route('products');
+            }
+            else{
+                session()->flash('success', __('site.Successfully Login'));
+                return redirect()->route('home');
+            }
         }
-
         session(['setPreviousUrl' => url()->previous()]);
         return view('frontend.customer.auth.login');
     }
@@ -34,12 +39,19 @@ class LoginController extends Controller
             'email'   => 'required',
             'password' => 'required|min:6'
         ]);
-        if (auth()->guard('customer')->attempt(['email' =>  $request->email, 'password' => $request->password, 'status' => 1], $request->get('remember'))) {
+        if (auth()->guard('customer')->attempt(['email' =>  $request->email, 'type'=>'guest', 'password' => $request->password, 'status' => 1], $request->get('remember'))) {
+            session()->flash('success', __('site.guestcheckoutenabled'));
+            return redirect(session()->get('setPreviousUrl')); // redirect to last url
+            // return redirect()->route('customer.profile.index');
+            // return view('frontend.customer.profile.index');
+        }
+        else if (auth()->guard('customer')->attempt(['email' =>  $request->email, 'password' => $request->password, 'status' => 1], $request->get('remember'))) {
             session()->flash('success', __('site.Successfully Login'));
             return redirect(session()->get('setPreviousUrl')); // redirect to last url
             // return redirect()->route('customer.profile.index');
             // return view('frontend.customer.profile.index');
-        } else {
+        }
+        else {
             session()->flash('success', __('site.Your email or password does not  correct'));
             return redirect()->back();
         }

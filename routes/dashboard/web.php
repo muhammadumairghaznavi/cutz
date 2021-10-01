@@ -20,6 +20,9 @@ Route::group(
             Route::resource('subCategories', 'SubCategoryController')->except(['show']);
             Route::get('/subCategories/duplicate/{id?}', 'SubCategoryController@duplicate')->name('subCategories.duplicate');
             Route::resource('reviews', 'ReviewController');
+            Route::resource('careers', 'CareerController');
+
+            Route::get('careers/{id}/getCV', 'CareerController@downloadcv')->name('careers.downloadcv');
 
             Route::get('/status/update', 'ReviewController@updateStatus')->name('review.update.status');
 
@@ -134,6 +137,7 @@ Route::group(
             Route::get('/weights/duplicate/{id?}', 'WeightController@duplicate')->name('weights.duplicate');
 
             Route::resource('productWeights', 'ProductWeightController')->except(['show']);
+            // Route::get('products/{id}/showproductWeights', 'ProductWeightController@showproductWeights')->name('showproductWeights');
 
 
             Route::resource('rates', 'RateController')->except(['show']);

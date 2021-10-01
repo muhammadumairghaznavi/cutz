@@ -388,6 +388,7 @@ if (!function_exists('make_slug')) {
                 'carts',
                 'inbox',
                 'reviews',
+                'careers',
 
 
 
@@ -435,7 +436,7 @@ if (!function_exists('make_slug')) {
                 'locations',
                 'productLocations',
 
-                //  'productWeights',
+                'productWeights',
 
 
                 'parteners',

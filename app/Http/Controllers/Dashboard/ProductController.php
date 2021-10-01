@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Addition;
 use App\Category;
+use App\Weight;
+use App\ProductWeight;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,6 +14,7 @@ use App\ProductTag;
 use App\Section;
 use App\SubCategory;
 use App\Tag;
+use App\NewWeigth;
 use App\Image;
 use App\Piece;
 use App\ProductPiece;
@@ -24,6 +27,8 @@ use Nexmo\Account\Price;
 
 class ProductController extends Controller
 {
+
+
     public function index(Request $request)
     {
 
@@ -31,16 +36,12 @@ class ProductController extends Controller
         $products = Product::when($request->search, function ($q) use ($request) {
             return $q->whereTranslationLike('title', '%' . $request->search . '%');
         })
-
             ->when($request->category_id, function ($q) use ($request) {
                 return $q->where('category_id', $request->category_id);
             })
-
-
             ->when($request->sku, function ($xq) use ($request) {
                 return $xq->where('sku', $request->sku);
             })
-
             ->when($request->stock_stauts, function ($q) use ($request) {
                 if ($request->stock_stauts == "OutOfStock") {
                     return $q->StockOff();
@@ -53,7 +54,7 @@ class ProductController extends Controller
                 return $status->where('status', $request->status);
             })
 
-            ->latest()->paginate(10);
+            ->orderBy('updated_at', 'desc')->orderBy('created_at', 'desc')->paginate(10);
 
 
         $countProducts = Product::count();
@@ -165,7 +166,8 @@ class ProductController extends Controller
     } // insert tags
     public function edit(Product $product)
     {
-
+        $byGramWeights = Weight::where('measure_unit', 'byGram')->get();
+        $byKilogramWeights = Weight::where('measure_unit', 'byKilogram')->get();
         $tag_ids = ProductTag::where('product_id', $product->id)->pluck('tag_id');
         $tag_selects  = Tag::whereIn('id', $tag_ids)->get();
         $tags = Tag::whereNotIn('id', $tag_ids)->get();
@@ -174,19 +176,21 @@ class ProductController extends Controller
         $subCategories = SubCategory::get();
         $provenances = Provenance::get();
 
+        $productWeights = ProductWeight::where('product_id', $product->id)->pluck('weight_id', 'price')->all();
+
 
         $piece_id = ProductPiece::where('product_id', $product->id)->pluck('piece_id');
         $piece_selects  = Piece::whereIn('id', $piece_id)->get();
         $pieces = Piece::whereNotIn('id', $piece_id)->get();
         $additions = Addition::where('product_id', $product->id)->get();
 
-        return view('dashboard.products.edit', compact('piece_selects', 'pieces', 'sections', 'categories', 'subCategories', 'provenances',  'product', 'tag_selects', 'tags', 'additions'));
+        return view('dashboard.products.edit', compact('productWeights', 'piece_selects', 'byGramWeights', 'byKilogramWeights', 'pieces', 'sections', 'categories', 'subCategories', 'provenances',  'product', 'tag_selects', 'tags', 'additions'));
     } //end of edit
     public function update(ProductRequest $request, Product $product)
     {
-        $request_data = $request->except(['image', 'nutritionFact', 'image_flag', 'images', 'tag_id', 'piece_id', 'title_en', 'title_ar', 'price_addtion', 'discount_addtion']);
 
-
+        // dd($request->all());
+        $request_data = $request->except(['gmweight', 'gmprice', 'kgprice', 'kgweight', 'image', 'nutritionFact', 'image_flag', 'images', 'tag_id', 'piece_id', 'title_en', 'title_ar', 'price_addtion', 'discount_addtion']);
 
         if ($request->nutritionFact) {
             if ($product->nutritionFact != 'default.png') {
@@ -209,6 +213,52 @@ class ProductController extends Controller
         } //end of external if
         if ($request->measr_unit == 'weight') {
             $request_data['unitValue'] = 1;
+        }
+        if($request->measr_unit == 'byGram'){
+
+            $prices = $request->input('gmprice');
+            $filteredPrices = array_filter($prices, function($a){
+
+                return $a !== null;
+
+            });
+
+            $weight = $request->input('gmweight');
+
+            if($filteredPrices){
+
+                $result = array_combine($weight, $filteredPrices);
+                $syncData = array();
+                foreach($result as $weight_id=>$price){
+                    $syncData[$weight_id] = array('price' => $price);
+                }
+
+                $product->measr_unit = $request->measr_unit;
+                $product->weights()->sync($syncData);
+            }
+        }
+
+        if($request->measr_unit == 'byKilogram'){
+
+            $prices = $request->input('kgprice');
+            $filteredPrices = array_filter($prices, function($a){
+                return $a !== null;
+            });
+            $weight = $request->input('kgweight');
+
+            if($filteredPrices){
+
+                $result = array_combine($weight, $filteredPrices);
+
+                $syncData = array();
+
+                foreach($result as $weight_id=>$price){
+
+                    $syncData[$weight_id] = array('price' => $price);
+                }
+                // dd($syncData);
+                $product->weights()->sync($syncData);
+            }
         }
 
         $product->update($request_data);
@@ -233,9 +283,12 @@ class ProductController extends Controller
             Addition::where('product_id', $product->id)->delete();
             $this->addtion_product($request->price_addtion, $product->id);
         } //end of piece_id
+        $product->provenance_id = $request->provenance_id;
+
+        $product->save();
 
         session()->flash('success', __('site.updated_successfully'));
-        return redirect()->back();
+        return redirect()->route('dashboard.products.index');
     } //end of update
     public function destroy(Product $product)
     {

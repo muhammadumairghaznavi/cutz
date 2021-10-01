@@ -93,7 +93,7 @@ $title = trans('site.orders');
                                         <td>{{ $item->qty }} </td>
                                         <td>{{ $item->price }} </td>
                                         {{-- <td>{{ $item->type=='gram'?'0.5 KG ':'1 KG'}}   </td> --}}
-                                        <td>{{ $item->type ? $item->type . ' GM' : '1 KG' }} </td>
+                                        <td>{{ $item->type }} </td>
 
 
 
@@ -101,7 +101,7 @@ $title = trans('site.orders');
                                 @endforeach
                                 <tr>
                                     <td colspan="3">
-                                        الاضافات
+                                        @lang('site.additions')
                                     </td>
                                 </tr>
                                 @foreach ($order->orderAddtions as $key => $item)

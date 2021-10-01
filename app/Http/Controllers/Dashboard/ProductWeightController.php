@@ -20,7 +20,7 @@ class ProductWeightController extends Controller
         $this->middleware(['permission:update_productWeights'])->only('edit');
         $this->middleware(['permission:delete_productWeights'])->only('destroy');
     } //end of constructor
-    public function index(Request $request)
+    public function index(Request $request, Product $product)
     {
         $productWeights = ProductWeight::when($request->search, function ($q) use ($request) {
             return $q->Where('product_id',  $request->search);
@@ -116,4 +116,14 @@ class ProductWeightController extends Controller
         }
     } //end of duplicate
 
+    public function showproductWeights(Request $request, Product $product){
+
+        $productWeights = ProductWeight::when($request->search, function ($q) use ($request) {
+            return $q->Where('product_id',  $request->search);
+        })->latest()->get();
+
+        $product_id = $request->search;
+
+        return view('dashboard.productWeights.index', compact('productWeights', 'product_id'));
+    }
 }

@@ -5,19 +5,19 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CutzInvoiceConfirmation;
 
-Route::get('/test', function () {
+// Route::get('/test', function () {
 
-// dd(config('mail'));
-    // vendor\egulias\email-validator\EmailValidator\Parser\Parser.php
-    // Log::info(print_r(config('mail'),true) );
+// // dd(config('mail'));
+//     // vendor\egulias\email-validator\EmailValidator\Parser\Parser.php
+//     // Log::info(print_r(config('mail'),true) );
 
-    $order = Order::find(167);
-    try {
-        Mail::to(['mahmouddief0@gmail.com', 'mm@g.com'])->send(new CutzInvoiceConfirmation($order));
-    } catch (Exception $e) {
-        Log::info($e->getMessage());
-    }
-});
+//     $order = Order::find(167);
+//     try {
+//         Mail::to(['mahmouddief0@gmail.com', 'mm@g.com'])->send(new CutzInvoiceConfirmation($order));
+//     } catch (Exception $e) {
+//         Log::info($e->getMessage());
+//     }
+// });
 
 Route::get('/clear', function () {
 
@@ -50,6 +50,8 @@ Route::group(
 
             Route::get('/register', 'RegisterController@index')->name('register');
             Route::post('/register/post', 'RegisterController@create')->name('customer.register.post');
+
+            Route::post('/guest/post', 'RegisterController@guestCreate')->name('guest.login.post');
 
             Route::get('/login', 'LoginController@index')->name('customer.login');
 
@@ -132,6 +134,8 @@ Route::group(
 
         Route::get('give-review', 'ReviewController@rateus');
         Route::get('reviews_page', 'ReviewController@reviews_page')->name('reviews_page');
+
+        Route::resource('careers', 'CareerController');
         Route::post('submit_rating', 'ReviewController@submit_rating')->name('submit_rating');
         Route::get('/about', 'HomeController@about')->name('about');
         Route::get('/useful-information', 'HomeController@blogs')->name('blogs');

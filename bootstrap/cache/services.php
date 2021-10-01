@@ -33,23 +33,25 @@
     29 => 'Illuminate\\Notifications\\SlackChannelServiceProvider',
     30 => 'Laravel\\Socialite\\SocialiteServiceProvider',
     31 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    32 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
-    33 => 'Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider',
-    34 => 'Carbon\\Laravel\\ServiceProvider',
-    35 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    36 => 'Laratrust\\LaratrustServiceProvider',
-    37 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
-    38 => 'Victorybiz\\GeoIPLocation\\GeoIPLocationServiceProvider',
+    32 => 'Collective\\Html\\HtmlServiceProvider',
+    33 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
+    34 => 'Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider',
+    35 => 'Carbon\\Laravel\\ServiceProvider',
+    36 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    37 => 'Laratrust\\LaratrustServiceProvider',
+    38 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
     39 => 'Victorybiz\\GeoIPLocation\\GeoIPLocationServiceProvider',
-    40 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
-    41 => 'App\\Providers\\AppServiceProvider',
-    42 => 'App\\Providers\\AuthServiceProvider',
-    43 => 'App\\Providers\\BroadcastServiceProvider',
-    44 => 'App\\Providers\\EventServiceProvider',
-    45 => 'App\\Providers\\RouteServiceProvider',
-    46 => 'Barryvdh\\DomPDF\\ServiceProvider',
-    47 => 'Laravel\\Passport\\PassportServiceProvider',
-    48 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
+    40 => 'Victorybiz\\GeoIPLocation\\GeoIPLocationServiceProvider',
+    41 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
+    42 => 'App\\Providers\\AppServiceProvider',
+    43 => 'App\\Providers\\AuthServiceProvider',
+    44 => 'App\\Providers\\BroadcastServiceProvider',
+    45 => 'App\\Providers\\EventServiceProvider',
+    46 => 'App\\Providers\\RouteServiceProvider',
+    47 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    48 => 'Laravel\\Passport\\PassportServiceProvider',
+    49 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
+    50 => 'Collective\\Html\\HtmlServiceProvider',
   ),
   'eager' => 
   array (
@@ -193,6 +195,10 @@
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'Laravel\\Socialite\\Contracts\\Factory' => 'Laravel\\Socialite\\SocialiteServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
+    'html' => 'Collective\\Html\\HtmlServiceProvider',
+    'form' => 'Collective\\Html\\HtmlServiceProvider',
+    'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
+    'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'NunoMaduro\\Collision\\Contracts\\Provider' => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
   ),
   'when' => 
@@ -237,6 +243,9 @@
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 
+    array (
+    ),
+    'Collective\\Html\\HtmlServiceProvider' => 
     array (
     ),
     'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => 

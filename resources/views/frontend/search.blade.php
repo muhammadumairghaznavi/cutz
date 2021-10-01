@@ -20,7 +20,7 @@ $page='shop';
 <section class="page-shop py-5">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="sidebar">
                     <form action="{{route('search')}}" method="GET">
                         @method("GET")
@@ -171,8 +171,8 @@ $page='shop';
                         </aside>
                     </form>
                 </div>
-            </div>
-            <div class="col-md-9">
+            </div> --}}
+            <div class="col-md-12">
                 <div class="products-items pb-5">
                     <div class="row">
                         @foreach ($products as $item)

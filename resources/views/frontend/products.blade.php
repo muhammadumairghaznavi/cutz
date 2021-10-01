@@ -20,7 +20,7 @@ $page='shop';
 <section class="page-shop py-5">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="sidebar">
                     <form action="{{route('search')}}" method="GET">
                         @method("GET")
@@ -175,9 +175,9 @@ $page='shop';
                         </aside>
                     </form>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="col-md-9">
+            <div class="col-md-12">
                 {{-- <div class="title-sorts d-flex align-items-center justify-content-between mb-4">
                     <strong class="title">Showing page {{$products->currentPage()}} –{{$products->count()}} of
                 {{$products->count()}} results</strong>

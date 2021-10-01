@@ -20,6 +20,7 @@ class CartController extends Controller
     }
     public function create(Request $request)
     {
+
         if ($request->cart) {
             $cart_products =  json_decode($request->cart,true);
             foreach ($cart_products as $product) {
@@ -35,6 +36,7 @@ class CartController extends Controller
             $findCart = Cart::where('customer_id', authCustomer()->id)->where('product_id', $request->product_id)->when($request->type, function ($q) use ($request) {
                 return $q->where('type',$request->type);
             })->first();
+
 
         if ($findCart ) {
 
@@ -61,8 +63,9 @@ class CartController extends Controller
             'customer_id' => authCustomer()->id,
             'product_id' => $request->product_id,
             'productWeight_id' => $request->productWeight_id,
-            'type' => $request->type,
+            'type' => $product->measr_unit,
             'qty' => $request->qty,
+
         ]);
         if ($request->addition_id) {
             $this->CartDetail($cart->id, $request->addition_id, $request->qty);
