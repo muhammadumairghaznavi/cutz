@@ -112,7 +112,7 @@ class Product extends Model
 
     public function getTotalAttribute()
     {
-        $price = $this->price - $this->discount;
+        $price = $this->price;
 
         if ($this->measr_unit == 'per_unit') {
             $price = $price * $this->unitValue;

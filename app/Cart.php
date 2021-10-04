@@ -28,7 +28,10 @@ class Cart extends Model
 
     public function getTotalCartAttribute()
     {
-         $price = $this->type?$this->product->Total *$this->qty*(int)($this->type) /1000: $this->product->Total * $this->qty;
+        // $price = $this->type?$this->product->Total *$this->qty*(int)($this->type) /1000: $this->product->Total * $this->qty;
+        // $price = null;
+        // $price = $this->product->total *  $this->qty;
+        $price = $this->type?$this->product->Total *$this->qty*(int)($this->type) /1000: ($this->product->discount?$this->product->discount * $this->qty  : $this->product->Total * $this->qty);
 
         // $price = $this->product->total *  $this->qty;
         if ($this->productWeight_id) {
@@ -36,14 +39,9 @@ class Cart extends Model
             $price = $productWeight->price *  $this->qty;
         }
 
-
-        if ($this->type == 'gram') {
-            $price = $this->product->total / 2 *  $this->qty;
-        }
-
-
-
-
+        // if ($this->type == 'gram') {
+        //     $price = $this->product->total / 2 *  $this->qty;
+        // }
 
         return $price;
     } // end of TotalCart attribute

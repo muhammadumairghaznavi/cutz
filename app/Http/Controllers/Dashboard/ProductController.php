@@ -50,7 +50,8 @@ class ProductController extends Controller
                 } elseif ($request->stock_stauts == "AvailableOfStock") {
                     return $q->StockAvailable();
                 }
-            })->when($request->status, function ($status) use ($request) {
+            })
+            ->when($request->status, function ($status) use ($request) {
                 return $status->where('status', $request->status);
             })
 
@@ -166,8 +167,7 @@ class ProductController extends Controller
     } // insert tags
     public function edit(Product $product)
     {
-        $byGramWeights = Weight::where('measure_unit', 'byGram')->get();
-        $byKilogramWeights = Weight::where('measure_unit', 'byKilogram')->get();
+
         $tag_ids = ProductTag::where('product_id', $product->id)->pluck('tag_id');
         $tag_selects  = Tag::whereIn('id', $tag_ids)->get();
         $tags = Tag::whereNotIn('id', $tag_ids)->get();
@@ -176,8 +176,8 @@ class ProductController extends Controller
         $subCategories = SubCategory::get();
         $provenances = Provenance::get();
 
-        $productWeights = ProductWeight::where('product_id', $product->id)->pluck('weight_id', 'price')->all();
-
+        $productWeights = ProductWeight::where('product_id', $product->id)->get();
+        // dd($productWeights);
 
         $piece_id = ProductPiece::where('product_id', $product->id)->pluck('piece_id');
         $piece_selects  = Piece::whereIn('id', $piece_id)->get();
@@ -211,55 +211,14 @@ class ProductController extends Controller
             } //end of inner if
             $request_data['image_flag'] = upload_img($request->image_flag, 'uploads/product_images/', 600);
         } //end of external if
-        if ($request->measr_unit == 'weight') {
+
+
+        if($request->measr_unit == 'per_unit'){
             $request_data['unitValue'] = 1;
-        }
-        if($request->measr_unit == 'byGram'){
-
-            $prices = $request->input('gmprice');
-            $filteredPrices = array_filter($prices, function($a){
-
-                return $a !== null;
-
-            });
-
-            $weight = $request->input('gmweight');
-
-            if($filteredPrices){
-
-                $result = array_combine($weight, $filteredPrices);
-                $syncData = array();
-                foreach($result as $weight_id=>$price){
-                    $syncData[$weight_id] = array('price' => $price);
-                }
-
-                $product->measr_unit = $request->measr_unit;
-                $product->weights()->sync($syncData);
-            }
+            $product->weights()->detach();
         }
 
-        if($request->measr_unit == 'byKilogram'){
 
-            $prices = $request->input('kgprice');
-            $filteredPrices = array_filter($prices, function($a){
-                return $a !== null;
-            });
-            $weight = $request->input('kgweight');
-
-            if($filteredPrices){
-
-                $result = array_combine($weight, $filteredPrices);
-
-                $syncData = array();
-
-                foreach($result as $weight_id=>$price){
-
-                    $syncData[$weight_id] = array('price' => $price);
-                }
-                // dd($syncData);
-                $product->weights()->sync($syncData);
-            }
-        }
 
         $product->update($request_data);
         if ($request->tag_id) {
@@ -286,6 +245,23 @@ class ProductController extends Controller
         $product->provenance_id = $request->provenance_id;
 
         $product->save();
+        if($request->measr_unit == 'byGram'){
+
+            $request_data['measr_unit'] = 'byGram';
+
+            session()->flash('success', __('site.updated_successfully'));
+            return redirect()->route('dashboard.addproductWeightsGM', ['product' => $product]);
+        }
+        if($request->measr_unit == 'byKilogram'){
+
+            $request_data['measr_unit'] = 'byKilogram';
+
+            session()->flash('success', __('site.updated_successfully'));
+            return redirect()->route('dashboard.addproductWeightsKG', ['product' => $product]);
+
+
+        }
+
 
         session()->flash('success', __('site.updated_successfully'));
         return redirect()->route('dashboard.products.index');

@@ -128,10 +128,20 @@
 
                             <h3 class="prices">
                                 {{-- <span id="toPrice">{{ $product->total }} {{ __('site.' . currncy()) }} </span> --}}
-                                <span id="toPrice">Please Select Weight </span>
-                                @if ($product->discount)
-                                    <del>{{ $product->MainPrice }}</del>
+                                @if ($product->measr_unit == 'per_unit')
+
+
+                                    @if ($product->discount)
+                                        <span>{{ $product->discount }} @lang('site.pound')</span>
+                                        <del>{{ $product->MainPrice }}</del>
+                                    @else
+                                        <span>{{ $product->MainPrice }} @lang('site.pound')</span>
+                                    @endif
+                                @elseif($product->measr_unit == 'byKilogram' || $product->measr_unit == 'byGram')
+                                    <span id="toPrice">Please Select Weight </span>
                                 @endif
+
+
 
                             </h3>
 
@@ -142,12 +152,12 @@
                                     @if ($product->measr_unit == 'per_unit')
                                         {{ ['ar' => 'بالوحدة', 'en' => 'Per unit'][app()->getLocale()] }}
                                     @else
-                                        @lang('site.weights') : <label for=""
-                                            id="toWeight">
+                                        @lang('site.weights') : <label for="" id="toWeight">
                                             {{-- {{ $product->unitValue }} @lang('site.kilogram') --}}
                                         </label>
-                                    @endif
 
+
+                                    @endif
                                 </strong>
                                 @if ($product->serve_number > 1)
                                     <strong class="h6 d-block"> @lang('site.serve_number') :
@@ -165,7 +175,7 @@
                         </div>
                         <div class="page-add-cart">
                             <form action="{{ route('customer.cart.add') }}" method="POST">
-                            {{-- <form> --}}
+                                {{-- <form> --}}
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}" id="">
                                 <div class="row no-gutters">
@@ -191,33 +201,7 @@
                                     </div>
                                     <div
                                         class="col-md-12 flex-column-xs in-mobile d-flex align-items-center justify-content-around">
-                                        @if ($product->measr_unit == 'weight')
-                                            <div class="w-50 d-flex align-items-center">
-                                                <strong class="h5 d-inline-block mr-3">@lang('site.Weight'): </strong>
-                                                <select name="type" class="adults" id="">
-                                                    {{-- <option value="per_unit">@lang('site.kg')/{{$product->total}}{{__('site.'.currncy())}}</option>
-                                            <option value="gram">@lang('site.gram') /{{$product->total /2}}{{__('site.'.currncy())}} </option> --}}
-                                                    <option selected></option>
-                                                    <option value="150">
-                                                        {{ ['ar' => '150 ج', 'en' => '150 G'][app()->getLocale()] }}
-                                                        /{{ ($product->total * 150) / 1000 }}{{ __('site.' . currncy()) }}
-                                                    </option>
-                                                    <option value="200">
-                                                        {{ ['ar' => '200 ج', 'en' => '200 G'][app()->getLocale()] }}
-                                                        /{{ ($product->total * 200) / 1000 }}{{ __('site.' . currncy()) }}
-                                                    </option>
-                                                    <option value="300">
-                                                        {{ ['ar' => '300 ج', 'en' => '300 G'][app()->getLocale()] }}
-                                                        /{{ ($product->total * 300) / 1000 }}{{ __('site.' . currncy()) }}
-                                                    </option>
-                                                    <option value="500">
-                                                        {{ ['ar' => '500 ج', 'en' => '500 G'][app()->getLocale()] }}
-                                                        /{{ ($product->total * 500) / 1000 }}{{ __('site.' . currncy()) }}
-                                                    </option>
-                                                    {{-- <option value="1000">{{['ar' => '1 كجم','en' => '1 Kg'][app()->getLocale()]}} /{{$product->total}}{{__('site.'.currncy())}} </option> --}}
-                                                </select>
-                                            </div>
-                                        @endif
+
                                         @if (count($product->productWeights) > 0)
                                             <label for="" class="priceset"></label>
                                             <div class="w-50 d-flex align-items-center">
@@ -225,11 +209,14 @@
                                                     name="productWeight_id" class="w-50" required>
                                                     <option value="">@lang('site.weights')</option>
                                                     @foreach ($product->productWeights as $productWeight)
+                                                        {{-- {{dd($productWeight->discount)}} --}}
 
                                                         <option value="{{ $productWeight->id }}">
                                                             {{ $productWeight->weight->title }}
                                                             = {{ $productWeight->price }}
                                                             {{ __('site.' . currncy()) }}
+                                                            <label style="font-size:11px;"></label>
+
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -362,15 +349,17 @@
                     //textArr[2] = return '=' string;
                     //textArr[3] = price;
                     //textArr[4] = price unit;
+                    // textArr[5] = discount;
 
-                    //console.log(textArr[4]);
+                    console.log(textArr[3] + textArr[5]);
 
 
                     $('#toPrice').html(textArr[3] + ' ' + textArr[4]);
                     $('#toWeight').html(textArr[0] + ' ' + textArr[1]);
+
+                    // $('#todiscountPrice').html(Number(textArr[3])+Number(textArr[5]));
                 }
             }
-
         </script>
     </section>
     <!-- //END => Page Single -->

@@ -34,15 +34,15 @@ $title=trans('site.productWeights');
                     </div>
                     <div class="form-group">
                         <label>@lang('site.weights')</label>
-                        <select name="weight_id" class="form-control" id="">
+                        <select disabled name="weight_id" class="form-control" id="">
                             @foreach ($weights as $weight)
-                                <option value="{{$weight->id}}" {{ $productWeight->weight_id==$weight->id?'selected':'' }}>{{$weight->title}}</option>
+                                <option value="{{$weight->id}}"  {{ $productWeight->weight_id==$weight->id?'selected':'' }}>{{$weight->title}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label>@lang('site.price')</label>
-                        <input type="number" name="price"  class="form-control" value="{{ $productWeight->price }}">
+                        <input type="number" name="price" disabled class="form-control" value="{{ $productWeight->price }}">
                     </div>
                     <div class="form-group">
                         <label>@lang('site.stock')</label>

@@ -471,9 +471,9 @@
     }
     .right-header .actions-mobile .menu-cart {
         position: absolute;
-        top: auto;
+        top: -324px;
         bottom: 100%;
-        right: -50px;
+        right: -127px;
         width: 18rem;
     }
     .right-header .actions-mobile .menu-cart .title {

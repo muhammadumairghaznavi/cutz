@@ -332,9 +332,9 @@
                         </li>
 
                         <li class="has_dropdown">
-                            <a href="javascript:void(0)">@lang('site.about') CUT<strong>Z</strong></a>
+                            <a href="{{ route('about')}}">@lang('site.about') CUT<strong>Z</strong></a>
                                 <ul class="dropdown_menu in_drb">
-
+                                    <li><a href="{{ route('about')}}">@lang('site.about')</a></li>
                                     <li><a href="{{ route('reviews_page')}}">@lang('site.reviews')</a></li>
                                     <li><a href="{{ route('careers.index')}}">@lang('site.career')</a></li>
                                 </ul>
@@ -413,7 +413,7 @@
     <footer class="" style="background-image: url({{ url('/') }}/frontend/assets/imgs/footer_map-03.png)">
         <div class="container">
             <div class="text-center py-5">
-                <a href="" class="logo"><img src="{{ $setting->image_footer }}" class="img-fluid" alt=""></a>
+                <a href="{{route('home')}}" class="logo"><img src="{{ $setting->image_footer }}" class="img-fluid" alt=""></a>
                 <p class="my-5">
                     @lang('site.footer_slug')
                     <br> @lang('site.footer_slug2')

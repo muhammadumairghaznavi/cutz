@@ -8,6 +8,8 @@ return [
     'greenFeed' => 'Grain Fed',
     'carts' => 'Carts',
 
+    'selectweight' => 'Now please add the weights',
+    'checkuncheck' => 'Please uncheck and check again',
 
     'internationalQualityCertificates' => 'International quality certificates',
     'Convenient_vacuum_packaging' => 'Convenient vacuum packaging',
@@ -288,7 +290,8 @@ return [
     'ifram' => 'ifram',
     'monthly' => 'monthly ',
     'Monthly' => 'monthly ',
-    'discount' => 'discount',
+    'discount' => 'Discount',
+    'discounted' => 'Discounted',
     'yearly' => 'yearly ',
     'Yearly' => 'yearly ',
     'sku' => 'sku',

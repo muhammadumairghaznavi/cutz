@@ -38,24 +38,34 @@
                                         {{-- @if (!$cart->productWeight_id) --}}
                                         {{-- <p class="qty">
                                         {{ $cart->type ? 'wheight  = ' . $cart->type . ' G' : '' }}</p> --}}
-                                        @if ($cart->type == 'byGram')
-
+                                        @if ($cart->productWeight_id)
                                             <p class="qty"> @lang('site.weights') =
                                                 {{ $cart->productWeight->weight->title }} </p>
-
-                                        @elseif ($cart->type == 'byKilogram')
-                                            <p class="qty"> @lang('site.weights') =
-                                                {{ $cart->productWeight->weight->title }} </p>
+                                            <p class="qty"> @lang('site.price')
+                                                = {{ $cart->productWeight->price }}
+                                            </p>
+                                            <p class="qty"> @lang('site.quantity') = {{ $cart->qty }} </p>
+                                            <p class="price">
+                                                {{ (int) $cart->productWeight->price * (int) $cart->qty }}{{ __('site.' . currncy()) }}
+                                            </p>
 
                                         @else
-                                            <p class="qty"> @lang('site.weights') =
-                                                {{ $cart->productWeight->weight->title }} </p>
+                                            {{ $cart->type == 'per_unit' ? 'Per Unit' : '' }}
+                                            <p class="qty"> @lang('site.price')
+                                                =
+                                                @if ($cart->product->discount)
+                                                    {{ $cart->product->discount }}
 
+                                                @else
+                                                    {{ $cart->product->price }}
+                                                @endif
+
+                                            </p>
+                                            <p class="qty"> @lang('site.quantity') = {{ $cart->qty }} </p>
+                                            <p class="price">
+                                                {{ $cart->product->discount ? (int) $cart->product->discount * (int) $cart->qty : (int) $cart->product->price * (int) $cart->qty }}{{ __('site.' . currncy()) }}
+                                            </p>
                                         @endif
-                                        <p class="qty"> @lang('site.price')
-                                            = {{ $cart->productWeight->price }}
-                                        </p>
-                                        <p class="qty"> @lang('site.quantity') = {{ $cart->qty }} </p>
 
 
                                         {{-- @else
@@ -64,7 +74,7 @@
 
                                         <p class="price">
                                             {{-- {{ $cart->type ? ($cart->product->Total * $cart->qty * (int) $cart->type) / 1000 : $cart->product->Total * $cart->qty }}{{ __('site.' . currncy()) }} --}}
-                                            {{ (int) $cart->productWeight->price * (int) $cart->qty }}{{ __('site.' . currncy()) }}
+                                            {{-- {{ (int) $cart->productWeight->price * (int) $cart->qty }}{{ __('site.' . currncy()) }} --}}
                                         </p>
                                         {{-- <strong>
                                    @lang('site.additions')

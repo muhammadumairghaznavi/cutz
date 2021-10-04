@@ -27,7 +27,14 @@ Route::group(
             Route::get('/status/update', 'ReviewController@updateStatus')->name('review.update.status');
 
             Route::resource('products', 'ProductController')->except(['show']);
-                  Route::get('products/export', 'ProductController@export')->name('products.export');
+
+            Route::get('products/{product}/addproductWeightsGM', 'ProductWeightController@addproductWeightsGM')->name('addproductWeightsGM');
+            Route::post('products/{product}/postproductWeightsGM', 'ProductWeightController@postproductWeightsGM')->name('postproductWeightsGM');
+
+            Route::get('products/{product}/addproductWeightsKG', 'ProductWeightController@addproductWeightsKG')->name('addproductWeightsKG');
+            Route::post('products/{product}/postproductWeightsKG', 'ProductWeightController@postproductWeightsKG')->name('postproductWeightsKG');
+
+            Route::get('products/export', 'ProductController@export')->name('products.export');
 
             Route::get('/products/duplicate/{id?}', 'ProductController@duplicate')->name('products.duplicate');
             Route::get('category_list/ajax/{id}', array('as' => 'category_list.ajax', 'uses' => 'ProductController@category_list'));
@@ -137,7 +144,7 @@ Route::group(
             Route::get('/weights/duplicate/{id?}', 'WeightController@duplicate')->name('weights.duplicate');
 
             Route::resource('productWeights', 'ProductWeightController')->except(['show']);
-            // Route::get('products/{id}/showproductWeights', 'ProductWeightController@showproductWeights')->name('showproductWeights');
+
 
 
             Route::resource('rates', 'RateController')->except(['show']);

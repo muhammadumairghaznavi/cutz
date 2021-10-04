@@ -185,11 +185,12 @@ class HomeController extends Controller
 
     public function product_search(Request $request)
     {
+
         $sections = Section::take(20)->get();
         $price_max = Product::max('price');
         $price_min = Product::min('price');
 
-        //       dd($request->all());
+
         $categories = Category::take(20)->get();
         $tags = Tag::take(10)->get();
         if (request('tag_arr')) {
@@ -198,37 +199,49 @@ class HomeController extends Controller
             $product_ids = null;
         }
 
-
-
-        $products = Product::when($product_ids, function ($q) use ($product_ids) {
-            return $q->whereIn('id', $product_ids);
+        $products = Product::when(request('subCategory_arr'), function ($qc) use ($request){
+            return $qc->whereIn('subCategory_id', request('subCategory_arr'));
         })
-            ->when(request('subCategory_arr'), function ($qc) use ($request) {
-                return $qc->whereIn('subCategory_id', request('subCategory_arr'));
-            })
-            ->when(request('category_id'), function ($qc) use ($request) {
-                return $qc->where('category_id', request('category_id'));
-            })
-            ->when(request('section_id'), function ($qc) use ($request) {
-                return $qc->where('section_id', request('section_id'));
-            })
+        ->when(request('keyword'), function($qkeyword) use ($request){
+            return $qkeyword->whereTranslationLike('title', '%' . $request->keyword . '%')->orWhereTranslationLike('description', '%' . $request->keyword . '%')
+            ->orWhere('sku', $request->keyword);
+        })
+        ->when(request('category_id'), function ($qc) use ($request) {
+            return $qc->where('category_id', request('category_id'));
+        })
+        ->when(request('section_id'), function ($qc) use ($request) {
+            return $qc->where('section_id', request('section_id'));
+        })
 
-            ->when(request('keyword'), function ($qkeyword) use ($request) {
-                return $qkeyword->whereTranslationLike('title', '%' . $request->keyword . '%')->orWhereTranslationLike('description', '%' . $request->keyword . '%');
-            })
+        // $products = Product::when($product_ids, function ($q) use ($product_ids) {
+        //     return $q->whereIn('id', $product_ids);
+        // })
+        //     ->when(request('subCategory_arr'), function ($qc) use ($request) {
+        //         return $qc->whereIn('subCategory_id', request('subCategory_arr'));
+        //     })
+        //     ->when(request('category_id'), function ($qc) use ($request) {
+        //         return $qc->where('category_id', request('category_id'));
+        //     })
+        //     ->when(request('section_id'), function ($qc) use ($request) {
+        //         return $qc->where('section_id', request('section_id'));
+        //     })
 
-            ->when(request('price_rang_min'), function ($price_rang) use ($request) {
-                return $price_rang->whereBetween('price', array(request('price_rang_min'), request('price_rang_max')));
-            })
+        //     ->when(request('keyword'), function ($qkeyword) use ($request) {
+        //         return $qkeyword->whereTranslationLike('title', '%' . $request->keyword . '%')->orWhereTranslationLike('description', '%' . $request->keyword . '%')
+        //         ->orWhere('idRms', $request->keyword);
+        //     })
+        //     ->when(request('price_rang_min'), function ($price_rang) use ($request) {
+        //         return $price_rang->whereBetween('price', array(request('price_rang_min'), request('price_rang_max')));
+        //     })
 
-            // ->when(request('price_sort'), function ($price_sort) use ($request) {
-            //     if (request('price_sort')== 'price_HtoL'){
-            //         return $price_sort->whereBetween('price', array(request('price_rang_min'), request('price_rang_max')));
+        //     // ->when(request('price_sort'), function ($price_sort) use ($request) {
+        //     //     if (request('price_sort')== 'price_HtoL'){
+        //     //         return $price_sort->whereBetween('price', array(request('price_rang_min'), request('price_rang_max')));
 
-            //     }
-            // })
+        //     //     }
+        //     // })
 
-            ->InStock()->Active()->latest()->paginate($this->PaginateNumber);
+        ->InStock()->Active()->latest()->paginate($this->PaginateNumber);
 
 
         return view('frontend.search', compact('sections', 'products', 'tags', 'categories', 'price_max', 'price_min'));

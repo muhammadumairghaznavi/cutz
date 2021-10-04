@@ -27,6 +27,9 @@ return [
     'Download_app_link' => 'تنزيل رابط التطبيق',
     'SUBSCRIBE_TO_OUR_NEWSLETTER' => 'اشترك في نشرتنا الإخبارية',
 
+    'selectweight' => 'الآن من فضلك أضف الأوزان',
+    'checkuncheck' => 'يرجى إلغاء الاختيار والتحقق مرة أخرى',
+
     'seafoodvariety' => 'مجموعة واسعة من أصناف المأكولات البحرية من أفضل المواقع في جميع أنحاء العالم إلى مائدة الطعام الخاصة بك',
     'Check_Our_Useful_information'=>'تحقق من معلوماتنا المفيدة',
     'CheckOurRecipes' => 'تحقق من وصفاتنا',

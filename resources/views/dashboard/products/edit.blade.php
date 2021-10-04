@@ -104,14 +104,11 @@ $title = trans('site.products');
                             </div> <!-- /.subCategories -->
                             <div class="form-group">
                                 <label>@lang('site.measr_unit') </label>
-                                <select name="measr_unit" id='measr_unit' onchange="showDiv('hidden_div', this)"
+                                <select required name="measr_unit" id='measr_unit' onchange="showDiv('hidden_div', this)"
                                     class="form-control">
                                     <option value="measr_uni">@lang('site.measr_unit')</option>
                                     <option value="per_unit" {{ $product->measr_unit == 'per_unit' ? 'selected' : '' }}>
                                         @lang('site.per_unit')
-                                    </option>
-                                    <option value="weight" {{ $product->measr_unit == 'weight' ? 'selected' : '' }}>
-                                        @lang('site.per_weight')
                                     </option>
                                     <option value="byGram" {{ $product->measr_unit == 'byGram' ? 'selected' : '' }}>
                                         @lang('site.byGram')
@@ -122,56 +119,22 @@ $title = trans('site.products');
                                     </option>
                                 </select>
                             </div>
-                            @php
-                                $calculate150gm = ($product->price * 150) / 100;
 
-                            @endphp
+                            @if ($product->measr_unit == 'byGram' || $product->measr_unit == 'byKilogram')
+                                <ul>
+                                    @foreach ($productWeights as $index=>$productWeight)
 
-                            <div id="selectGrams" class="form-group">
-                                <div class="card card-chart">
-                                    <div class="card-header">
-                                        <label>@lang('site.select_grams')</label>
-                                    </div>
-                                    <div class="card-body">
-                                        <div>
-                                            @foreach ($byGramWeights as $item)
-                                                <label style="padding: 5px;" for="">
-                                                    {!! Form::checkbox('gmweight[]', $item->id, in_array($item->id, $productWeights) ? true : false, ['class' => 'selectgm', 'id' => $item->title]) !!}
-                                                    {{ $item->title }}
-                                                    <input placeholder="Price for {{ $item->title }} Gm"
-                                                        class="inputPriceGM form-control" id="{{ $item->id }}"
-                                                        name="gmprice[]" type="hidden">
-                                                </label>
-                                            @endforeach
-                                        </div>
-                                        <br />
-                                    </div>
-                                    <div class="card-footer">--</div>
-                                </div>
+                                        <li for="">{{ $productWeight->weight->title }} = {{$productWeight->price}} L.E</li>
+                                        <br>
+                                    @endforeach
+                                </ul>
+                            @else
+                            {{ $product->Total}} {{__('site.'.currncy())}}/ {{$product->unitValue}}-{{$product->measr_unit}}
+                            @endif
+                            <div>
+
                             </div>
 
-                            <div id="selectKilograms" class="form-group">
-                                <div class="card card-chart">
-                                    <div class="card-header">
-                                        <label for="">@lang('site.select_kilograms')</label>
-                                    </div>
-                                    <div class="card-body">
-                                        <div>
-                                            @foreach ($byKilogramWeights as $item)
-                                                <label style="padding: 5px;" for="">
-                                                    {!! Form::checkbox('kgweight[]', $item->id, in_array($item->id, $productWeights) ? true : false, ['class' => 'selectkg', 'id' => $item->title]) !!}
-                                                    {{ $item->title }}
-                                                    <input placeholder="Price for {{ $item->title }} KG"
-                                                        class="inputPriceKG form-control" id="{{ $item->id }}"
-                                                        name="kgprice[]" type="hidden">
-                                                </label>
-                                            @endforeach
-                                        </div>
-                                        <br />
-                                    </div>
-                                    <div class="card-footer">--</div>
-                                </div>
-                            </div>
                             <style>
                                 #hidden_div {
                                     display: none;
@@ -242,12 +205,7 @@ $title = trans('site.products');
                                     @endforeach
                                 </select>
                             </div>
-                            {{-- <div class="form-group">
-                <label>@lang('site.image_flag') </label>
-                <input type="file" name="image_flag" class="form-control image3" enctype="multipart/form-data">
-                <img src="{{$product->flag_path}}" style="width: 100px" class="img-thumbnail image-preview3"
-                alt="">
-            </div> --}}
+
 
                             <div class="form-group">
                                 <label>@lang('site.nutritionFact') </label>
@@ -513,25 +471,22 @@ $title = trans('site.products');
         });
     </script>
     <script>
-
-        if("{{$product->measr_unit}}" === "byGram"){
+        if ("{{ $product->measr_unit }}" === "byGram") {
             $('#selectGrams').show(1000);
             console.log('byGram');
-        }
-        else{
+        } else {
             $('#selectGrams').hide();
         }
-        if("{{$product->measr_unit}}" === "byKilogram"){
+        if ("{{ $product->measr_unit }}" === "byKilogram") {
             $('#selectKilograms').show();
-        }
-        else{
+        } else {
             $('#selectKilograms').hide();
         }
 
         // $('#selectGrams').hide();
         // $('#selectKilograms').hide();
-        $('.inputPriceKG').hide();
-        $('.inputPriceGM').hide();
+        $('.inputPriceKG').show();
+        $('.inputPriceGM').show();
 
         var calculate50gm = ({{ $product->price }} * 50) / 1000;
         var calculate500gm = ({{ $product->price }} / 2);
@@ -540,13 +495,6 @@ $title = trans('site.products');
             $('input[class="selectgm"]').each(function(idx, el) {
                 if ($(el).is(':checked')) {
                     var selectedValue = $(el).val();
-
-
-                    var dd = $("input[value=" +selectedValue+ "]");
-
-                    //dd.prop('required', true);
-
-                    // console.log(dd, check);
 
                     switch (selectedValue) {
                         case '14':
@@ -609,8 +557,7 @@ $title = trans('site.products');
                 } else {
                     var selectedValue = $(el).val();
                     $('#' + selectedValue).val("");
-                    // $('#' + selectedValue).hide(1000);
-                    // $('#' + selectedValue).prop('required', false);
+
                 }
             });
         });
@@ -661,7 +608,6 @@ $title = trans('site.products');
                             break;
                         default:
                             console.log('no buddy sucks');
-
                     }
 
                 } else {

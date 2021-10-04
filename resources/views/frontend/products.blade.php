@@ -1,26 +1,26 @@
 @extends('layouts.app')
 @section('title_page')
-@lang('site.shop')
-@php
-$page='shop';
-@endphp
+    @lang('site.shop')
+    @php
+    $page = 'shop';
+    @endphp
 @endsection
 @section('content')
-<!-- START => Breadcrumb -->
-<div class="breadcrumb-pages" style="background-image: url({{url('/')}}/frontend/assets/imgs/bg-pages.jpg)">
-    <strong class="h1 d-block">@lang('site.shop')</strong>
-    <ul>
-        <li><a href="{{route('home')}}">@lang('site.home')</a></li>
-        <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
-        <li><a href="{{route('products')}}">@lang('site.shop')</a></li>
-    </ul>
-</div>
-<!-- //END => Breadcrumb -->
-<!-- START => Page Shop -->
-<section class="page-shop py-5">
-    <div class="container-fluid">
-        <div class="row">
-            {{-- <div class="col-md-3">
+    <!-- START => Breadcrumb -->
+    <div class="breadcrumb-pages" style="background-image: url({{ url('/') }}/frontend/assets/imgs/bg-pages.jpg)">
+        <strong class="h1 d-block">@lang('site.shop')</strong>
+        <ul>
+            <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
+            <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
+            <li><a href="{{ route('products') }}">@lang('site.shop')</a></li>
+        </ul>
+    </div>
+    <!-- //END => Breadcrumb -->
+    <!-- START => Page Shop -->
+    <section class="page-shop py-5">
+        <div class="container-fluid">
+            <div class="row">
+                {{-- <div class="col-md-3">
                 <div class="sidebar">
                     <form action="{{route('search')}}" method="GET">
                         @method("GET")
@@ -177,8 +177,8 @@ $page='shop';
                 </div>
             </div> --}}
 
-            <div class="col-md-12">
-                {{-- <div class="title-sorts d-flex align-items-center justify-content-between mb-4">
+                <div class="col-md-12">
+                    {{-- <div class="title-sorts d-flex align-items-center justify-content-between mb-4">
                     <strong class="title">Showing page {{$products->currentPage()}} –{{$products->count()}} of
                 {{$products->count()}} results</strong>
                 <div class="right-sorting d-flex align-items-center justify-content-between">
@@ -192,52 +192,54 @@ $page='shop';
                 </div>
                 <i class="btn-filter-mobile fas fa-filter"></i>
             </div> --}}
-            <div class="products-items pb-5">
-                <div class="row">
-                    @foreach ($products as $item)
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item-product">
-                            <div class="img">
-                                <a
-                                    href="{{route('product_details',['id'=>$item->id,'slug'=>make_slug($item->title)])}}"><img
-                                        src="{{$item->image_path}}" class="img-fluid" alt="{{$item->title}}"></a>
-                            </div>
-                            <a href="{{route('product_details',['id'=>$item->id,'slug'=>make_slug($item->title)])}}"
-                                class="title">{{$item->title}}</a>
-                            <div class="rating">
-                                @for($star=1 ; $star<=$item->AvgRate;$star ++)
-                                    <i class="fas fa-sm fa-star active"></i>
-                                    @endfor
-                                    @for($star_off=$item->AvgRate ; $star_off< 5 ;$star_off++) <i
-                                        class="fas fa-sm fa-star"></i>
-                                        @endfor
-                                        <span>({{$item->rates->count()}} @lang('site.rates'))</span>
-                            </div>
-                            <h3 class="prices">
-                                <span>{{$item->total}} {{__('site.'.currncy())}}</span>
-                                @if($item->discount)
-                                <del>{{$item->MainPrice}}</del>
-                                @endif
-                            </h3>
-                            <div class="add-cart d-flex align-items-center justify-content-around">
-                                <a href="{{route('product_details',['id'=>$item->id,'slug'=>make_slug($item->title)])}}"
-                                    class="btn-add-cart"> <i class="fas fa-lg fa-cart-plus"></i></a>
-                                <a href="{{route('customer.wishlist',['product_id'=>$item->id])}}" class="btn-add-cart">
-                                    <i class="far fa-lg fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    {{ $products->appends(request()->query())->links() }}
-                </div> <!-- //END row -->
-                <!-- Paginations -->
-                <div class="paginations mt-5">
+                    <div class="products-items pb-5">
+                        <div class="row">
+                            @foreach ($products as $item)
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="item-product">
+                                        <div class="img">
+                                            <a
+                                                href="{{ route('product_details', ['id' => $item->id, 'slug' => make_slug($item->title)]) }}"><img
+                                                    src="{{ $item->image_path }}" class="img-fluid"
+                                                    alt="{{ $item->title }}"></a>
+                                        </div>
+                                        <a href="{{ route('product_details', ['id' => $item->id, 'slug' => make_slug($item->title)]) }}"
+                                            class="title">{{ $item->title }}</a>
+                                        <div class="rating">
+                                            @for ($star = 1; $star <= $item->AvgRate; $star++)
+                                                <i class="fas fa-sm fa-star active"></i>
+                                            @endfor
+                                            @for ($star_off = $item->AvgRate; $star_off < 5; $star_off++) <i
+                                                    class="fas fa-sm fa-star"></i>
+                                            @endfor
+                                            <span>({{ $item->rates->count() }} @lang('site.rates'))</span>
+                                        </div>
+                                        <h3 class="prices">
+                                            <span>{{ $item->total }} {{ __('site.' . currncy()) }}</span>
+                                            @if ($item->discount)
+                                                <del>{{ $item->MainPrice }}</del>
+                                            @endif
+                                        </h3>
+                                        <div class="add-cart d-flex align-items-center justify-content-around">
+                                            <a href="{{ route('product_details', ['id' => $item->id, 'slug' => make_slug($item->title)]) }}"
+                                                class="btn-add-cart"> <i class="fas fa-lg fa-cart-plus"></i></a>
+                                            <a href="{{ route('customer.wishlist', ['product_id' => $item->id]) }}"
+                                                class="btn-add-cart">
+                                                <i class="far fa-lg fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            {{ $products->appends(request()->query())->links() }}
+                        </div> <!-- //END row -->
+                        <!-- Paginations -->
+                        <div class="paginations mt-5">
 
-                </div><!-- // Paginations -->
+                        </div><!-- // Paginations -->
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-</section>
-<!-- //END => Page Shop -->
+    </section>
+    <!-- //END => Page Shop -->
 @endsection

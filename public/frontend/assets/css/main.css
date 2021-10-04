@@ -3278,6 +3278,12 @@ input[type="submit"].btn-filter:hover {
     font-weight: bold;
 }
 
+.prices label {}
+
+.prices del {
+    color: white;
+}
+
 .user-name {
     /* box-shadow: 0 0 10px #ddd;
   padding: 1rem; */

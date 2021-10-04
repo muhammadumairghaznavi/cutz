@@ -424,7 +424,10 @@ $(document).ready(function() {
     // });
 
     // Select
-    $("select").selectric();
+    $("select").selectric({
+        disableOnMobile: false,
+        nativeOnMobile: false
+    });
 
     // Select QTY
     $(".add").click(function(e) {

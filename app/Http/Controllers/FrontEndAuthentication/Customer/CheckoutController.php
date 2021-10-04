@@ -46,7 +46,7 @@ class CheckoutController extends Controller
         ]);
 
 
-        createAddressRms($address->id);
+      //  createAddressRms($address->id);
 
 
         $delivery_cost = $this->calculateDeliveryCostWithAddress($request->city_id);
@@ -224,8 +224,8 @@ class CheckoutController extends Controller
 
 
         //call API RMS Integration
-        if ($_SERVER['REMOTE_ADDR'] !== '127.0.0.1')
-            createOrderRms($order->id);
+        // if ($_SERVER['REMOTE_ADDR'] !== '127.0.0.1')
+        //     createOrderRms($order->id);
 
 
         try {

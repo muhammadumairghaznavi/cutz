@@ -21,6 +21,7 @@ class CartController extends Controller
     public function create(Request $request)
     {
 
+        // dd($request->all());
         if ($request->cart) {
             $cart_products =  json_decode($request->cart,true);
             foreach ($cart_products as $product) {
@@ -33,12 +34,13 @@ class CartController extends Controller
         $request_data = $request->except(['addition_id', 'productWeight_id']);
 
             // $findCart = Cart::where('customer_id', authCustomer()->id)->where('product_id', $request->product_id)->where('productWeight_id', $request->productWeight_id)->first();
-            $findCart = Cart::where('customer_id', authCustomer()->id)->where('product_id', $request->product_id)->when($request->type, function ($q) use ($request) {
-                return $q->where('type',$request->type);
-            })->first();
+        $findCart = Cart::where('customer_id', authCustomer()->id)->where('product_id', $request->product_id)->when($request->type, function ($q) use ($request) {
+            return $q->where('type',$request->type);
+        })->first();
 
 
-        if ($findCart ) {
+
+        if ($findCart) {
 
             $findCart->update(['qty' => $request->qty]);
             // session()->flash('success', __('site.actually_added_successfuly'));
@@ -63,7 +65,7 @@ class CartController extends Controller
             'customer_id' => authCustomer()->id,
             'product_id' => $request->product_id,
             'productWeight_id' => $request->productWeight_id,
-            'type' => $product->measr_unit,
+            'type' => null,
             'qty' => $request->qty,
 
         ]);

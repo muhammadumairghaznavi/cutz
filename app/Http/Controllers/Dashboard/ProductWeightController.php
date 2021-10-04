@@ -65,6 +65,7 @@ class ProductWeightController extends Controller
     } //end of edit
     public function update(ProductWeightRequest $request, ProductWeight $productWeight)
     {
+        // dd($request->all());
         $request_data = $request->except(['image',]);
         if ($request->image) {
             //check if img not empty remove the current img to replace the new img
@@ -73,7 +74,9 @@ class ProductWeightController extends Controller
             } //end of inner if
             $request_data['image'] = upload_img($request->image, 'uploads/productWeight/', 600);
         } //end of external if
-        $productWeight->update($request_data);
+        // $productWeight->update($request_data);
+        $productWeight->stock = $request->stock;
+        $productWeight->update();
 
         session()->flash('success', __('site.updated_successfully'));
         return redirect()->back();
@@ -116,14 +119,67 @@ class ProductWeightController extends Controller
         }
     } //end of duplicate
 
-    public function showproductWeights(Request $request, Product $product){
+    public function addproductWeightsGM(Product $product){
 
-        $productWeights = ProductWeight::when($request->search, function ($q) use ($request) {
-            return $q->Where('product_id',  $request->search);
-        })->latest()->get();
+        // $productWeights = ProductWeight::where('product_id',  $product->id)->latest()->get();
+        $byGramWeights = Weight::where('measure_unit', 'byGram')->get();
+        $productWeights = ProductWeight::where('product_id', $product->id)->pluck('weight_id', 'price')->all();
 
-        $product_id = $request->search;
+        return view('dashboard.productWeights.gmweight', compact('byGramWeights', 'productWeights', 'product'));
+    }
+    public function postproductWeightsGM(Request $request, Product $product){
 
-        return view('dashboard.productWeights.index', compact('productWeights', 'product_id'));
+        $prices = $request->input('gmprice');
+        $filteredPrices = array_filter($prices, function ($a){
+            return $a !== null;
+        });
+
+        $weight = $request->input('gmweight');
+
+        $result = array_combine($weight, $filteredPrices);
+
+        $syncData = array();
+        foreach($result as $weight_id=>$price){
+            $syncData[$weight_id] = array('price' => $price);
+        }
+
+        $product->weights()->sync($syncData);
+
+        session()->flash('success', __('site.updated_successfully'));
+        return redirect()->route('dashboard.products.index');
+
+    }
+
+
+    public function addproductWeightsKG(Product $product){
+
+        // $productWeights = ProductWeight::where('product_id',  $product->id)->latest()->get();
+        $byKilogramWeights = Weight::where('measure_unit', 'byKilogram')->get();
+        $productWeights = ProductWeight::where('product_id', $product->id)->pluck('weight_id', 'price')->all();
+
+
+        return view('dashboard.productWeights.kgweight', compact('byKilogramWeights', 'productWeights', 'product'));
+    }
+    public function postproductWeightsKG(Request $request, Product $product){
+
+        $prices = $request->input('kgprice');
+        $filteredPrices = array_filter($prices, function ($a){
+            return $a !== null;
+        });
+
+        $weight = $request->input('kgweight');
+
+        $result = array_combine($weight, $filteredPrices);
+
+        $syncData = array();
+        foreach($result as $weight_id=>$price){
+            $syncData[$weight_id] = array('price' => $price);
+        }
+
+        $product->weights()->sync($syncData);
+
+        session()->flash('success', __('site.updated_successfully'));
+        return redirect()->route('dashboard.products.index');
+
     }
 }
