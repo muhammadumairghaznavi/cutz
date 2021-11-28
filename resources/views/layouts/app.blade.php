@@ -26,6 +26,8 @@
     {{-- end share button --}}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url('/') }}/frontend/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="{{ url('/') }}/frontend/assets/css/all.min.css">
     <link rel="stylesheet" href="{{ url('/') }}/frontend/assets/fonts/fontello-icons.css">
     <link rel="stylesheet" href="{{ url('/') }}/frontend/assets/libs/animate/animate.min.css">
@@ -226,6 +228,8 @@
             margin: 10px
         }
 
+
+
     </style>
     <style type="text/css">
         h3.center-text {
@@ -236,26 +240,14 @@
 </head>
 
 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-    (function() {
-        var s1 = document.createElement("script"),
-            s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/60214334c31c9117cb76fac0/1eu0ut1v6';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-</script>
+
 <!--End of Tawk.to Script-->
 
 
 <body class="">
 
 
-    @include('sweet::alert')
+    {{-- @include('sweet::alert') --}}
 
 
 
@@ -287,7 +279,7 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="logo">
-                    <a href=""><img src="{{ $setting->image_logo }}" class="img-fluid" alt=""></a>
+                    <a href="{{route('home')}}"><img src="{{ $setting->image_logo }}" class="img-fluid" alt=""></a>
                 </div>
                 <nav>
                     <img src="{{ $setting->image_logo }}" class="img-fluid logo-mobile" alt="">
@@ -332,11 +324,12 @@
                         </li>
 
                         <li class="has_dropdown">
-                            <a href="{{ route('about')}}">@lang('site.about') CUT<strong>Z</strong></a>
+                             <a href="{{ route('about')}}">@lang('site.about') CUT<strong>Z</strong></a>
                                 <ul class="dropdown_menu in_drb">
                                     <li><a href="{{ route('about')}}">@lang('site.about')</a></li>
                                     <li><a href="{{ route('reviews_page')}}">@lang('site.reviews')</a></li>
-                                    <li><a href="{{ route('careers.index')}}">@lang('site.career')</a></li>
+
+                                    <li><a href="{{ route('careers.index')}}">@lang('site.careers')</a></li>
                                 </ul>
                         </li>
                         <li class="has-dropdown {{ $page == 'shop' ? 'active' : '' }}">
@@ -413,7 +406,7 @@
     <footer class="" style="background-image: url({{ url('/') }}/frontend/assets/imgs/footer_map-03.png)">
         <div class="container">
             <div class="text-center py-5">
-                <a href="{{route('home')}}" class="logo"><img src="{{ $setting->image_footer }}" class="img-fluid" alt=""></a>
+                <a href="" class="logo"><img src="{{ $setting->image_footer }}" class="img-fluid" alt=""></a>
                 <p class="my-5">
                     @lang('site.footer_slug')
                     <br> @lang('site.footer_slug2')
@@ -525,7 +518,7 @@
         });
     </script>
 
-    <script>
+  <script>
         $('#login_form').show();
         $('#guest_form').hide();
         $('#login').hide();
@@ -543,8 +536,11 @@
             $('#guestcheckout').show(1000);
         });
 
-    </script>
+        if ($(window).width() < 767){
+        //    $('#sec_n_id').attr('data-image-src','').css('background-image','{{ url('/') }}/frontend/assets/imgs/Image2.png').css('background-size','cover').css('background-position','center')
+        }
 
+    </script>
 
 </body>
 

@@ -140,17 +140,6 @@
       'Laratrust' => 'Laratrust\\LaratrustFacade',
     ),
   ),
-  'uxweb/sweet-alert' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'UxWeb\\SweetAlert\\SweetAlertServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Alert' => 'UxWeb\\SweetAlert\\SweetAlert',
-    ),
-  ),
   'victorybiz/geoip-location' => 
   array (
     'providers' => 

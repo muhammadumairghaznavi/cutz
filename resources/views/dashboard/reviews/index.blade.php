@@ -59,7 +59,7 @@ $reviews_delete=' ';
                     <thead>
                         <tr>
                             <th> </th>
-
+                            
                             <th>Reviews</th>
                             {{-- <th>@lang('site.description')</th> --}}
                             <th>Comment</th>
@@ -72,7 +72,7 @@ $reviews_delete=' ';
                         <tr>
 
                             <td>{{ $index + 1 }}</td>
-
+                            
                             <td> {{ $review->review }} </td>
                             <td> {{ $review->comment }}</td>
                             <td> <input type="checkbox" data-id="{{ $review->id }}" name="status" class="js-switch" {{ $review->status == 1 ? 'checked' : '' }}></td>

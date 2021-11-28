@@ -6,7 +6,7 @@ use App\Review;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Controllers\Controller;
-use App\Providers\SweetAlertServiceProvider;
+// use App\Providers\SweetAlertServiceProvider;
 use Redirect;
 use SweetAlert;
 use Alert;
@@ -118,7 +118,7 @@ class ReviewController extends Controller
         $fiveStarReviews = Review::where("review", 5)->count();
         // dd($count_Reviews);
         return view('frontend.rateus', compact('twoStarReviews','threeStarReviews','count_Reviews', 'oneStarReviews', 'fourStarReviews','fiveStarReviews'));
-        
+
         // dd(authCustomer()->id);
 
     }

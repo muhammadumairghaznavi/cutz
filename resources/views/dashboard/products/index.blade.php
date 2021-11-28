@@ -156,6 +156,7 @@ $productLocation_edit = '';
                                             @endif
 
 
+
                                         </td>
                                         <td>
                                             {{ __('site.' . $product->status) }}

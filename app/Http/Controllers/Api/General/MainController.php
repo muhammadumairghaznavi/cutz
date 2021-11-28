@@ -120,7 +120,6 @@ class MainController extends Controller
         }
 
 
-
         if ($request->piece_id) {
 
             $product_id = ProductPiece::where('piece_id', $request->piece_id)->pluck('product_id');
@@ -139,10 +138,7 @@ class MainController extends Controller
             $products = Product::where('section_id', $request->section_id)->InStock()->Active()->paginate($this->PaginateNumber);
         }
 
-        else {
-            $products = Product::InStock()->Active()->paginate($this->PaginateNumber);
-        }
-
+        
         $items = ProductResource::collection($products);
         return $this->sendResponse($items, "");
     } //end of products

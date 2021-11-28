@@ -30,6 +30,7 @@ class LoginController extends Controller
                 return redirect()->route('home');
             }
         }
+
         session(['setPreviousUrl' => url()->previous()]);
         return view('frontend.customer.auth.login');
     }

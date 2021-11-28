@@ -74,30 +74,30 @@ $section_delete=' ';
                             {{-- <td><img src="{{ $weight->image_path }}" style="width: 100px;" class="img-thumbnail" alt="">
                             </td> --}}
                             <td>
-                                @if (auth()->user()->hasPermission('update_weights'))
-                                <a href="{{ route('dashboard.weights.duplicate', $weight->id) }}"
-                                    class="btn btn-warning btn-sm {{$section_edit=='close'?'hidden':''}}"><i
-                                        class="fa fa-copy"></i> @lang('site.duplicate')</a>
-                                <a href="{{ route('dashboard.weights.edit', $weight->id) }}"
-                                    class="btn btn-info btn-sm {{$section_edit=='close'?'hidden':''}}"><i
-                                        class="fa fa-edit"></i> @lang('site.edit')</a>
-                                @else
-                                <a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i>
-                                    @lang('site.edit')</a>
-                                @endif
-                                @if (auth()->user()->hasPermission('delete_weights'))
-                                <form action="{{ route('dashboard.weights.destroy', $weight->id) }}" method="post"
-                                    style="display: inline-block">
-                                    {{ csrf_field() }}
-                                    {{ method_field('delete') }}
-                                    <button type="submit"
-                                        class="btn btn-danger delete btn-sm {{$section_delete=='close'?'hidden':''}}"><i
-                                            class="fa fa-trash"></i> @lang('site.delete')</button>
-                                </form><!-- end of form -->
-                                @else
-                                <button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i>
-                                    @lang('site.delete')</button>
-                                @endif
+                                <!--@if (auth()->user()->hasPermission('update_weights'))-->
+                                <!--<a href="{{ route('dashboard.weights.duplicate', $weight->id) }}"-->
+                                <!--    class="btn btn-warning btn-sm {{$section_edit=='close'?'hidden':''}}"><i-->
+                                <!--        class="fa fa-copy"></i> @lang('site.duplicate')</a>-->
+                                <!--<a href="{{ route('dashboard.weights.edit', $weight->id) }}"-->
+                                <!--    class="btn btn-info btn-sm {{$section_edit=='close'?'hidden':''}}"><i-->
+                                <!--        class="fa fa-edit"></i> @lang('site.edit')</a>-->
+                                <!--@else-->
+                                <!--<a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i>-->
+                                <!--    @lang('site.edit')</a>-->
+                                <!--@endif-->
+                                <!--@if (auth()->user()->hasPermission('delete_weights'))-->
+                                <!--<form action="{{ route('dashboard.weights.destroy', $weight->id) }}" method="post"-->
+                                <!--    style="display: inline-block">-->
+                                <!--    {{ csrf_field() }}-->
+                                <!--    {{ method_field('delete') }}-->
+                                <!--    <button type="submit"-->
+                                <!--        class="btn btn-danger delete btn-sm {{$section_delete=='close'?'hidden':''}}"><i-->
+                                <!--            class="fa fa-trash"></i> @lang('site.delete')</button>-->
+                                <!--</form><!-- end of form -->-->
+                                <!--@else-->
+                                <!--<button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i>-->
+                                <!--    @lang('site.delete')</button>-->
+                                <!--@endif-->
                             </td>
                         </tr>
                         @endforeach

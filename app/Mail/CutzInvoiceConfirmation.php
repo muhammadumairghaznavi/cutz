@@ -31,6 +31,6 @@ class CutzInvoiceConfirmation extends Mailable
     public function build()
     {
         // dd($this->order->address_id);
-        return $this->view('emails.mailConfirmation');
+        return $this->subject('New Order Confirmation')->view('emails.mailConfirmation');
     }
 }

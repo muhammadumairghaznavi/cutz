@@ -19,20 +19,21 @@ use App\Mail\CutzInvoiceConfirmation;
 //     }
 // });
 
-Route::get('/clear', function () {
-
-
-    Artisan::call('view:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('config:clear');
-    Artisan::call('config:cache');
+// Route::get('/clear', function () {
 
 
 
+//     Artisan::call('view:clear');
+//     Artisan::call('cache:clear');
+//     Artisan::call('config:clear');
+//     Artisan::call('config:cache');
 
-    session()->flash('success', __('site.cleard done'));
-    return redirect()->back();
-})->name('clear');
+
+
+
+//     session()->flash('success', __('site.cleard done'));
+//     return redirect()->back();
+// })->name('clear');
 
 
 
@@ -134,7 +135,6 @@ Route::group(
 
         Route::get('give-review', 'ReviewController@rateus');
         Route::get('reviews_page', 'ReviewController@reviews_page')->name('reviews_page');
-
         Route::resource('careers', 'CareerController');
         Route::post('submit_rating', 'ReviewController@submit_rating')->name('submit_rating');
         Route::get('/about', 'HomeController@about')->name('about');
@@ -164,8 +164,8 @@ Route::group(
         Route::get('/subCategories/{id?}/{slug?}', 'HomeController@subCategories')->name('subCategories');
         Route::get('/subCategories/products/{id?}/{slug?}', 'HomeController@productsSubCategories')->name('productsSubCategories');
 
-        Route::get('/privacies', 'HomeController@privacies')->name('privacies');
-        Route::get('/polices', 'HomeController@polices')->name('polices');
+        Route::get('/privacy-policy', 'HomeController@privacies')->name('privacies');
+        Route::get('/terms-and-conditions', 'HomeController@polices')->name('polices');
 
 
         Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe');

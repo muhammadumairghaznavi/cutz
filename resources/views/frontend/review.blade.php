@@ -8,7 +8,7 @@
 @section('content')
     <!-- START => Breadcrumb -->
     <div class="breadcrumb-pages"
-        style="background-image: url({{ url('/') }}/frontend/assets/imgs/client-background-2.jpg);">
+        style="background-image: url({{url('/')}}/frontend/assets/imgs/bg-pages.jpg)">
         <strong class="h1 d-block">@lang('site.Reviews Page')</strong>
         <ul>
             <li><a href="{{ route('home') }}">@lang('site.home')</a></li>

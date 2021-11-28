@@ -20,7 +20,7 @@
         <div class="container">
 
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="form-contact">
@@ -29,7 +29,7 @@
                                         {{ session('success') }}
                                     </div>
                                 @endif
-                                <form action="{{ route('careers.store') }}" method="post"  enctype="multipart/form-data">>
+                                <form action="{{ route('careers.store') }}" method="post"  enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     @csrf
 

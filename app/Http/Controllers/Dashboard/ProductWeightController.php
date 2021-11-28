@@ -20,7 +20,7 @@ class ProductWeightController extends Controller
         $this->middleware(['permission:update_productWeights'])->only('edit');
         $this->middleware(['permission:delete_productWeights'])->only('destroy');
     } //end of constructor
-    public function index(Request $request, Product $product)
+    public function index(Request $request)
     {
         $productWeights = ProductWeight::when($request->search, function ($q) use ($request) {
             return $q->Where('product_id',  $request->search);
@@ -65,7 +65,6 @@ class ProductWeightController extends Controller
     } //end of edit
     public function update(ProductWeightRequest $request, ProductWeight $productWeight)
     {
-        // dd($request->all());
         $request_data = $request->except(['image',]);
         if ($request->image) {
             //check if img not empty remove the current img to replace the new img
@@ -74,9 +73,10 @@ class ProductWeightController extends Controller
             } //end of inner if
             $request_data['image'] = upload_img($request->image, 'uploads/productWeight/', 600);
         } //end of external if
-        // $productWeight->update($request_data);
+        
         $productWeight->stock = $request->stock;
         $productWeight->update();
+        
 
         session()->flash('success', __('site.updated_successfully'));
         return redirect()->back();
@@ -118,7 +118,7 @@ class ProductWeightController extends Controller
             return redirect()->back();
         }
     } //end of duplicate
-
+    
     public function addproductWeightsGM(Product $product){
 
         // $productWeights = ProductWeight::where('product_id',  $product->id)->latest()->get();
@@ -182,4 +182,5 @@ class ProductWeightController extends Controller
         return redirect()->route('dashboard.products.index');
 
     }
+
 }

@@ -28,12 +28,10 @@ class CartController extends Controller
     } //end of index
     public function create()
     {
-        // dd('as');
         return view('dashboard.carts.create');
     } //end of create
     public function store(Request $request)
     {
-        //dd($request->all());
         $request_data = $request->all();
         if ($request->image) {
             $request_data['image'] = upload_img($request->image, 'uploads/about/', 600);

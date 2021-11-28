@@ -1,0 +1,69 @@
+[2021-11-16 00:00:06] local.INFO: every hour  
+[2021-11-16 01:00:04] local.INFO: every hour  
+[2021-11-16 02:00:09] local.INFO: every hour  
+[2021-11-16 03:00:05] local.INFO: every hour  
+[2021-11-16 04:00:06] local.INFO: every hour  
+[2021-11-16 05:00:06] local.INFO: every hour  
+[2021-11-16 06:00:07] local.INFO: every hour  
+[2021-11-16 07:00:05] local.INFO: every hour  
+[2021-11-16 08:00:07] local.INFO: every hour  
+[2021-11-16 09:00:06] local.INFO: every hour  
+[2021-11-16 10:00:09] local.INFO: every hour  
+[2021-11-16 10:49:51] local.INFO: create customer to rms  
+[2021-11-16 10:49:51] local.INFO: Array
+(
+    [id] => 873
+    [full_name] => Loly Bendary
+    [email] => loly.bendary.lb@gmail.com
+    [phone] => 
+    [deviceType] => desktop
+    [address] => address
+    [address2] => address
+)
+  
+[2021-11-16 10:49:51] local.INFO:   
+[2021-11-16 10:50:01] local.INFO: create customer to rms  
+[2021-11-16 10:50:01] local.INFO: Array
+(
+    [id] => 874
+    [full_name] => Shaimaa
+    [email] => guest@gmail.com
+    [phone] => 01001143969
+    [deviceType] => desktop
+    [address] => address
+    [address2] => address
+)
+  
+[2021-11-16 10:50:01] local.INFO:   
+[2021-11-16 10:54:47] local.INFO: Array
+(
+    [id] => 278
+    [customer_id] => 873
+    [frirstName] => Amin
+    [lastName] => Sabbour
+    [phone] => 01010937693
+    [city_id] => 5
+    [customer_region] => Nasr city
+    [street] => Waha city - bloc 12
+    [home_number] => 4
+    [floor_number] => 11
+    [postal_code] => 
+    [address] => Waha city - bloc 12 - building 4 - floor 11 - apartment 442
+    [notes] => 
+)
+  
+[2021-11-16 10:54:47] local.INFO: create or update address   
+[2021-11-16 10:54:47] local.INFO:   
+[2021-11-16 11:00:07] local.INFO: every hour  
+[2021-11-16 12:00:08] local.INFO: every hour  
+[2021-11-16 13:00:05] local.INFO: every hour  
+[2021-11-16 14:00:06] local.INFO: every hour  
+[2021-11-16 15:00:08] local.INFO: every hour  
+[2021-11-16 16:00:07] local.INFO: every hour  
+[2021-11-16 17:00:05] local.INFO: every hour  
+[2021-11-16 18:00:05] local.INFO: every hour  
+[2021-11-16 19:00:06] local.INFO: every hour  
+[2021-11-16 20:00:05] local.INFO: every hour  
+[2021-11-16 21:00:07] local.INFO: every hour  
+[2021-11-16 22:00:06] local.INFO: every hour  
+[2021-11-16 23:00:04] local.INFO: every hour  

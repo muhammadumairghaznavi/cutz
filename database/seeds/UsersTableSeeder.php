@@ -13,17 +13,17 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = \App\User::create([
-            'first_name' => 'super',
+            'first_name' => 'cutzmarketing',
             'last_name' => 'admin',
-            'email' => 'Cutz@marketing-dragon.com',
+            'email' => 'cutz@marketing-dragon.com',
             'password' => bcrypt('123456'),
         ]);
         $user->attachRole('super_admin');
         $Inbox = \App\Inbox::create(
             [
-                'name' => 'tarek ',
+                'name' => 'marketing ',
                 'phone' => '456789321',
-                'email' => 'info@Gamil.com',
+                'email' => 'cutz@marketing-dragon.com',
                 'message' => 'Your message',
                 'status' => 'active',
             ]

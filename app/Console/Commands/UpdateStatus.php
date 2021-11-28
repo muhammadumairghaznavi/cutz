@@ -58,12 +58,12 @@ class UpdateStatus extends Command
         // return 'Please Contact With Developer ';
         $myBody1 = [];
         $client = new \GuzzleHttp\Client();
-         $lastTime = Carbon::now()->subHour()->toDateTimeString();
+        //$lastTime = '2021-06-25 16:21:50';
         //  2021-06-27 16:21:50
 
          
        
-         $link = 'http://41.33.56.19/api/get_items.php?lastupdated=' .$lastTime ;
+        $link = 'http://41.33.56.19/api/get_items.php';
         $response = $client->request(
             'get',
             $link,
@@ -71,17 +71,14 @@ class UpdateStatus extends Command
         );
         $data = json_decode($response->getBody()->getContents());
         
-     
-        //  \Log::info(print_r($data->message, true));
          
         foreach ($data as $items) {
             
              
 
-            foreach ($items  as $RmsProduct) {
+            foreach ($items as $RmsProduct) {
 
-          
-                if(!$RmsProduct->ID){continue;}
+                if(isset($RmsProduct->message)){break;}
                 
                 $check = Product::where('idRms', $RmsProduct->ID)->where('sku', $RmsProduct->sku)->first();
                 // dd($RmsProduct->ID);
@@ -146,8 +143,14 @@ class UpdateStatus extends Command
             foreach ($items  as $rmsItem) {
                 $product = Product::where('idRms', $rmsItem->itemid)->first();
                 $location = Location::where('idRms', $rmsItem->storeid)->first();
-                if ($product) {
-                    $check = ProductLocation::where('location_id', $location->id)->where('product_id', $product->id)->where('stock', $rmsItem->quantity)->first();
+                if ($product && $location) {
+                    try {
+                        $check = ProductLocation::where('location_id', $location->id)->where('product_id', $product->id)->where('stock', $rmsItem->quantity)->first();
+                    } catch(\Exception $e) {
+                        if(!$location) {
+                            \Log::info("Location is null!");
+                        }
+                    }
                     if ($check) {
                         ProductLocation::where('location_id', $location->id)->where('product_id', $product->id)->update([
                             'stock' =>  $rmsItem->quantity,

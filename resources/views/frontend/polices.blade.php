@@ -19,6 +19,7 @@
        <div class="row align-items-center  ">
             <div class="col-md-6">
                 <div class="about-txt">
+                    
                     <strong class="h1 d-block text-center">{{$item->title}}</strong>
                     <p class="m-0">
                         {!!$item->description!!}

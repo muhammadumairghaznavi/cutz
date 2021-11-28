@@ -36,7 +36,7 @@ $page='abouts';
                 </div>
                 <div class="col-md-6 wow {{$key%2==0?'fadeInRight  ':'fadeInLeft'}} ">
                     <div class="txt text-center">
-                       
+
                         @if($key==0)
                         <strong class="h2 d-block font-weight-bold title_color">About CUT<span>Z</span></strong>
                         @else

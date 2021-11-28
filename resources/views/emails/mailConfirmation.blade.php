@@ -1,389 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <title>MGH || E-mail</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style media="screen">
+    a {
+      text-decoration: none;
+    }
 
-    <!--Google font-->
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    a:-webkit-any-link {
+      text-decoration: none;
+    }
 
-    <style>
-        /*********************************************************************************/
-        /*********************************************************************************/
-        /*********************************************************************************/
-        /*********************************************************************************/
-        /*********************************************************************************/
-        /*********************************************************************************/
-        /*********************************************************************************/
+    hr {
+      border: 1px solid #ddd;
+    }
 
-        /* .top_lines {
+    table {
+      border-collapse: collapse;
+      background-color: #fff;
+    }
 
-}
-.top_lines > div {
-  position: absolute;
-}
-.top_lines .left_line {
-  left: 0;
-  width: 50%;
-  height: 50%;
-}
-.top_lines .right_line {
-  right: 0;
-} */
-        * {
-            box-sizing: border-box;
-        }
+    span {
+      display: block;
+      color: #333;
+      font-family: 'Proxima Nova', san-serif;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif !important;
-            margin: 0;
-            padding: 0;
-        }
+    .clearfix {
+      clear: both;
+    }
 
-        p {
-            margin: 0;
-        }
+    .mcnCaptionBottomImageContent {
+      width: 600px;
+    }
 
-        a {
-            text-decoration: none;
-            margin: 0;
-        }
+    .order-placed {
+      width: 100%;
+      margin-bottom: 25px;
+    }
 
-        .invoice_page {
-            padding: 1rem;
-            background-color: #fff;
-            background-image: url(../imgs/logo.png);
-            background-repeat: no-repeat;
-            background-size: 90%;
-            background-position-x: 50%;
-            background-position-y: 80%;
-            position: relative;
-            z-index: 1;
-            margin: 0 auto;
-            width: 1000px;
-        }
+    .product-image {
+      width: 200px;
+      padding: 20px;
+    }
 
-        .invoice_page::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.92);
-            z-index: -1;
-        }
+    .text-container {
+      padding: 20px 10px;
+    }
 
-        .invoice_page .logo {
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-        }
+    .notice-container {
+      border: 2px solid #ddd;
+      width: 90%;
+      text-transform: none;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      text-align: center;
+    }
 
-        .invoice_page .logo img {
-            max-height: 100px;
-            margin: auto;
-            display: block;
-        }
+    .florist-image {
+      width: 50px;
+      border-radius: 25px;
+      display: block;
+      margin: 0 auto 5px auto;
+    }
 
-        .head_invoice {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #98d5dd;
-            color: #1b3383;
-            padding: 1rem 2rem;
-            position: relative;
-        }
+    .shop-name {
+      font-weight: 700;
+    }
 
-        .head_invoice::before {
-            /* content: ""; */
-            width: 100%;
-            height: 15px;
-            position: absolute;
-            top: -11px;
-            left: 0;
-            background-color: #fff;
-            /*z-index: -1;
-  */
-            transform: rotate(-1deg);
-            -webkit-transform: rotate(-1deg);
-            -moz-transform: rotate(-1deg);
-            -ms-transform: rotate(-1deg);
-            -o-transform: rotate(-1deg);
-        }
+    .delivery-info {
+      width: 90%;
+      margin: 0 auto 20px auto;
+    }
 
-        .head_invoice img {
-            max-height: 30px;
-            margin-right: .5rem;
-        }
+    .delivery-info--title,
+    .order-summary--title {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
 
-        .head_invoice div {
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
+    .order-summary--title {
+      width: 90%;
+      margin: 0 auto;
+    }
 
-        .head_invoice div.left {
-            /* margin-bottom: -11px; */
-        }
+    .delivery-info--recipient,
+    .delivery-info--card,
+    .delivery-info--instr,
+    .delivery-info--subs,
+    .order-detail--title {
+      font-weight: 700;
+    }
 
-        .head_invoice strong {
-            font-weight: bold;
-        }
+    .order-summary-contact {
+      float: left;
+      width: 60%;
+    }
 
-        .head_invoice .name {
-            font-weight: normal;
-        }
+    .order-summary-total {
+      float: right;
+      width: 40%;
+    }
 
-        .head_invoice .price {
-            font-weight: bold;
-            color: #f00;
-        }
+    .order-summary-btn {
+      margin: 20px;
+      color: #369ea3;
+      padding: 8px 20px;
+      border: 1px solid #369ea3;
+      border-radius: 4px;
+    }
 
-        .head_invoice_info {
-            display: flex;
-            /* align-items: center; */
-            justify-content: space-between;
-            width: 70%;
-            padding: 1rem 2rem;
-        }
+    .order-summary-container,
+    .questions-container {
+      margin: 15px auto;
+      width: 90%;
+      border-top: 2px solid #ddd;
+    }
 
-        .footer_invoice p,
-        .head_invoice_info p {
-            color: #1b3383;
-            padding: .2rem 0;
-        }
+    .order-summary-container {
+      padding-top: 20px;
+    }
 
-        .footer_invoice strong,
-        .head_invoice_info .user_info strong {
-            font-weight: bold;
-        }
+    .florist-questions,
+    .billing-questions,
+    .chatnow {
+      width: 50%;
+      text-align: center;
+    }
 
-        .footer_invoice {
-            padding: 1rem 2rem;
-        }
+    .florist-questions {
+      margin: 20px auto;
+      float: left;
+    }
 
+    .billing-questions {
+      margin: 20px auto;
+      float: right;
+    }
 
-        /* DivTable.com */
-        .divTable {
-            display: table;
-            width: 100%;
-        }
+    .chatnow {
+      margin: 0 auto 15px auto;
+      text-decoration: underline;
+      color: #0082B5;
+    }
 
-        .divTableRow {
-            display: table-row;
-            text-align: center;
-        }
+    .fine-print {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+    }
 
-        .divTableCell,
-        .divTableHead {
-            border: 1.5px solid #c7c7c7;
-            display: table-cell;
-            padding: 1rem;
-        }
+    .footer {
+      background-color: black;
+      padding: 20px 0;
+    }
 
-        .divTableHeading {
-            background-color: transparent;
-            display: table-header-group;
-            font-weight: bold;
-            padding: .5rem 1rem;
-            color: #1b3383;
-            font-weight: bold;
-        }
+    .footer span {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      width: 70%;
+      padding: 10px 0;
+      color: #fff;
+      text-transform: none;
+      font-size: 10px;
+    }
 
-        .divTableFoot {
-            background-color: #EEE;
-            display: table-footer-group;
-            font-weight: bold;
-        }
-
-        .divTableBody {
-            display: table-row-group;
-            font-weight: 600;
-            color: #1b3383;
-        }
-
-        .divTableBody a {
-            font-weight: 600;
-            color: var(--blueColor);
-            display: -webkit-inline-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            max-width: 140px;
-        }
-
-        .table_invoice .img_tb {
-            height: 70px;
-            width: 90px;
-            display: inline-block;
-        }
-
-        .table_invoice .img_tb img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .footer_txt {
-            background-color: #98d5dd;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .footer_txt p {
-            margin: 0;
-            font-size: 1.2rem;
-            color: #1b3383;
-            font-weight: bold;
-        }
-
-        .logo-2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .logo-2 img {
-            max-height: 300px;
-        }
-
-    </style>
-
+    i {
+      padding: 0 15px
+    }
+  </style>
 </head>
 
-<body class="">
-
-
-    <!--section start-->
-    <section class="faq-section section-big-py-space bg-light">
-        <div class="container">
-            <div class="invoice_page">
-                <div class="top_lines">
-                    <span class="left_line"></span>
-                    <span class="right_line"></span>
-                </div>
-                <div class="logo-2"><img src="{{ asset('frontend/assets/thankyou.jpeg') }}" class="img-fluid" alt="">
-                </div>
-                <div class="head_invoice">
-                    <div class="left"><img src="{{ asset('frontend/assets/hand-icon.png') }}" alt="">
-                        <strong>Thanks:</strong> <span
-                            class="name">{{ $order->customer_name ?? $order->customer->full_name }} </span>
-                    </div>
-                    <div class="right"><img src="{{ asset('frontend/assets/tota-icon.png') }}" alt="">
-                        <strong>Total:</strong> <span class="price">{{ $order->total }}
-                            {{ getCurrencyBlade() }}</span>
-                    </div>
-                </div>
-                <div class="head_invoice_info">
-                    <div class="user_info">
-                        <p> <strong>Name:</strong> {{ $order->customer_name ?? $order->customer->full_name }} </p>
-                        <p> <strong>Phone:</strong> {{ $order->customer_phone ?? $order->customer->phone }} </p>
-                        <p> <strong>Address:</strong> {{ $order->customer_address }} </p>
-                        {{-- <p> <strong>City:</strong> {{ $order->city->name ?? '' }}</p> --}}
-                        <p> <strong>E-mail:</strong> {{ $order->customer_email ?? $order->customer->email }} </p>
-                    </div>
-                    <div class="order_info">
-                        <p> <strong>@lang('site.coupon') :</strong> {{ $order->promocode }}  </p>
-                        <p> <strong>Payment Methods:</strong> {{ __('site.' . $order->payment_method) }} </p>
-                        <p> <strong>Date Creation:</strong> {{ date('d-m-Y', strtotime($order->created_at)) }} </p>
-                        <p> <strong>Time:</strong> {{ Carbon\Carbon::parse($order->created_at)->format('h:i  A') }}
-                        </p>
-                    </div>
-
-                    <div class="user_info">
-
-                        <b> @lang('site.customer_address') </b>: {{ $order->customer_address }} <br>
-                        <b> @lang('site.customer_region') : </b>{{ $order->customer_region }} <br>
-                        <b> @lang('site.customer_street') : </b>{{ $order->customer_street }} <br>
-                        <b> @lang('site.customer_home_number') : </b>{{ $order->customer_home_number }} <br>
-                        <b> @lang('site.customer_floor_number') : </b>{{ $order->customer_floor_number }} <br>
-                        <b> @lang('site.customer_appartment_number') : </b>{{ $order->customer_appartment_number }}
-                        <br>
-                        <b> @lang('site.notes') : </b>{{ $order->customer_comments_extra }} <br>
-                    </div>
-
-                </div>
-                <div class="table_invoice">
-                    <div class="divTable">
-                        <div class="divTableHeading">
-                            <div class="divTableRow">
-                                <div class="divTableCell"> # </div>
-                                <div class="divTableCell"> @lang('site.Purchases') </div>
-                                <div class="divTableCell"> @lang('site.quantity') </div>
-                                <div class="divTableCell"> @lang('site.price') </div>
-                                <div class="divTableCell"> @lang('site.weights') </div>
+<body>
+  <center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable"
+      style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #F2F2F2;height: 100% !important;width: 100% !important;">
+      <tbody>
+        <tr>
+          <td align="center" valign="top" id="bodyCell"
+            style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 20px;border-top: 0;height: 100% !important;width: 100% !important;">
+            <!-- BEGIN TEMPLATE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer"
+              style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border: 0;">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"
+                    style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"
+                    style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <!-- BEGIN HEADER // -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader"
+                      style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                      <tbody>
+                        <tr>
+                          <div class="head_invoice" style="background: black; color: white; display: flex;">
+                            <div class="left" style="padding-top: 15px; padding-bottom: 15px; padding-left: 15px;">
+                              <a href="https://cutz.com.eg" target="_blank"><img width="72" src="{{asset('/images/logo.png')}}" alt="Cutz Logo"></a>
                             </div>
-                        </div>
-                        <div class="divTableBody">
-                            @foreach ($order->orderDetails as $key => $item)
-                                <div class="divTableRow">
-                                    <div class="divTableCell"> {{ $key + 1 }} </div>
-                                    <div class="divTableCell">
-                                        <div class="img_tb"><img src="{{ $item->image_path }}" class="img-fluid"
-                                                alt="">
-                                        </div> <a href="">{{ $item->product->title ?? '' }}</a>
-                                    </div>
-                                    <div class="divTableCell"> {{ $item->qty }} </div>
-                                    <div class="divTableCell"> {{ $item->price }} </div>
-                                    <div class="divTableCell"> {{ $item->type ? $item->type . ' GM' : '1 KG' }} </div>
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-                </div>
-
-                {{-- الاضافات  --}}
-                @if($order->orderAddtions)
-                <div class="table_invoice">
-                    <div class="divTable">
-                        <div class="divTableHeading">
-                            <div class="divTableRow">
-                                <div class="divTableCell"> # </div>
-                                <div class="divTableCell"> @lang('site.Purchases') </div>
-                                <div class="divTableCell"> @lang('site.total') </div>
-                                <div class="divTableCell"> @lang('site.quantity') </div>
-                                <div class="divTableCell"> @lang('site.price') </div>
+                            <div class="left" style="padding-top: 40px; padding-bottom: 40px; padding-left: 25px;">
+                              <strong>Thanks: </strong> <span class="name" style="color: white;">{{ $order->customer_name ??
+                                $order->customer->full_name }} </span>
                             </div>
-                        </div>
-                        <div class="divTableBody">
-                            @foreach ($order->orderAddtions as $key => $item)
-                                <div class="divTableRow">
-                                    <div class="divTableCell"> {{ $key + 1 }} </div>
-                                    <div class="divTableCell">
 
-                                        </div> <a href="">{{ $item->addition->title ?? '' }}  </a>
+                          </div>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- // END HEADER -->
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"
+                    style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <!-- BEGIN BODY // -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody"
+                      style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                      <tbody>
+                        <tr>
+
+                          <td valign="top" class="bodyContainer"
+                            style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock"
+                              style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                              <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                  <td valign="top" class="mcnTextBlockInner"
+                                    style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock"
+                              style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                              <tbody class="mcnDividerBlockOuter">
+                                <tr>
+
+                                  <td class="mcnDividerBlockInner"
+                                    style="padding: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0"
+                                      width="100%">
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <span></span>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="delivery-info">
+                                      <span class="delivery-info--title">Order Information</span>
+                                      <hr />
+                                      <span class="delivery-info--recipient">{{ $order->customer_name ??
+                                        $order->customer->full_name }}</span>
+                                      <span class="">{{ $order->customer_phone ?? $order->customer->phone }}</span>
+                                      <span class="">{{ $order->customer_email ?? $order->customer->email }}</span>
+                                      <span class="delivery-info--address">{{ $order->customer_address }}, street {{
+                                        $order->customer_street }},</span>
+                                      <span class="delivery-info--address">Appartment {{
+                                        $order->customer_appartment_number }}, Floor {{ $order->customer_floor_number
+                                        }}, House# {{ $order->customer_home_number }}</span>
+                                      <span class="delivery-date">{{ date('d-m-Y h:i A', strtotime($order->created_at))
+                                        }}</span>
+                                      <br />
+                                      <span class="delivery-info--instr">Order Specifications: </span>
+                                      <span>Promocode: {{ $order->promocode }}</span>
+                                      <span>Payment Method: {{ __('site.' . $order->payment_method) }}</span>
+                                      <span>Notes: {{ $order->customer_comments_extra }}</span>
+                                      <br />
+                                      <span class="delivery-info--subs">About CUTZ: </span>
+                                      <span>To master something and know everything possible about it, you need to cover
+                                        it from A to Z and from here the concept of CUTZ was born. We are in the Z stage
+                                        of understanding food to provide natural and fresh products with the highest
+                                        quality to our consumers.</span>
                                     </div>
-                                    <div class="divTableCell">{{ $item->addition->total ?? '' }} </div>
-                                    <div class="divTableCell"> {{ $item->qty }} </div>
-                                    <div class="divTableCell"> {{ $item->price }}  </div>
-                                </div>
-                            @endforeach
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="order-summary"><span class="order-summary--title">Order Summary: <br />
+                                      <hr />
+                                    </span></td>
+                                </tr>
+                                <tr>
+                                  <table>
+                                    <tr>
+                                      <td width="5%"></td>
+                                      <td width="40%"><span class="order-detail--title">@lang('site.Purchases')</span>
+                                      </td>
+                                      <td width="20%"><span class="order-detail--title">@lang('site.price')</span></td>
+                                      <td width="20%"><span class="order-detail--title">@lang('site.quantity')</span>
+                                      </td>
+                                      <td width="20%"><span class="order-detail--title">@lang('site.weights')</span>
+                                      </td>
+                                      <td width="5%"></td>
+                                    </tr>
 
-                        </div>
-                    </div>
-                </div>
-                @endif
+                                    @foreach ($order->orderDetails as $key => $item)
+                                    <tr>
+                                      <td></td>
+                                      <td><span>{{ $item->product->title ?? '' }}</span></td>
+                                      <td><span>{{ $item->price }}</span></td>
+                                      <td><span>{{ $item->qty }}</span></td>
+                                      <td><span>{{ $item->type ? $item->type . ' GM' : '1 KG' }}</span></td>
+                                      <td></td>
+                                    </tr>
+                                    @endforeach
+                                  </table>
+                                <tr>
+                                  <td>
+                                    <div class="order-summary-container">
+                                      <div class="order-summary-contact">
+                                        <span>{{ $order->customer_name ?? $order->customer->full_name }}</span>
+                                        <span>{{ $order->customer_address }}, street {{ $order->customer_street
+                                          }}.</span>
+                                        <span>Appartment {{ $order->customer_appartment_number }}, Floor {{
+                                          $order->customer_floor_number }}, House# {{ $order->customer_home_number
+                                          }}</span>
+                                        <span>{{ $order->customer_phone ?? $order->customer->phone }}</span>
+                                      </div>
+                                      <div class="order-summary-total">
+                                        <span>Item Total: </span>
+                                        <span>Total Delivery:</span>
+                                        <span>Total Tax:</span>
+                                        <span>Discount:</span>
+                                        <hr />
+                                        <span>Order Total: {{ $order->total }}</span>
+                                      </div>
+                                      <div class="clearfix"></div>
+                                    </div>
 
-                <div class="logo text-center mb-0"><img src="{{ $setting->image_logo }}" class="img-fluid" alt="">
-                </div>
-                <div class="footer_txt">
-                    <p class="mb-0">Looks like you’ve made a great choice, you deserve it</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Section ends-->
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <table>
+                                    <tr>
+                                      <td>
+                                        <span class="order-summary-btn">Full Order Summary</span>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="questions-container">
+                                      <div class="florist-questions">
+                                        <span>Get in touch for more details</span>
+                                        <span><a href="tel:15620">15620</a></span>
+                                        <span><a href="mailto:info@cutz.com.eg">info@cutz.com.eg</a></span>
 
+                                      </div>
+                                      <div class="billing-questions">
+                                        <span>Poultry is referred white and dark meat.</span>
+                                        <span>Chicken, Turkey, Duck and more,</span>
+                                        <span>with wide variety of cuts according to</span>
+                                        <span>your preference.</span>
+                                      </div>
+                                      <div class="clearfix"></div>
+                                      <a href="#"><span class="chatnow">Chat with us now</span></a>
+                                      <span class="fine-print">Keep an eye out for an email confirming your gift's safe
+                                        delivery.</span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="footer">
+                                    <span>
+                                      <a href="https://cutz.com.eg" target="_blank"><img width="72" src="{{asset('/images/logo.png')}}" alt="Cutz Logo"></a>
+                                    </span>
+                                    <span>Plot No. 258, Small Industries Zone, In The Industrial Zone Lands North Of
+                                      Katameya Ain Sokhna Road, Third Settlement</span>
+                                    <span>Please add info@cutz.com.eg to your address book to ensure our messages don't
+                                      go to spam. If you would prefer not to receive emails from us, simply <a href="#"
+                                        style="color: #fff; text-decoration: underline">click here</a></span>
+                                    <span>COPYRIGHT &copy; 2021 CUTZEGYPT.</span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
+  </center>
 </body>
 
 </html>

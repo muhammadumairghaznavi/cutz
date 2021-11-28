@@ -13,8 +13,9 @@ use App\Http\Requests\backend\ProductRequest;
 use App\ProductTag;
 use App\Section;
 use App\SubCategory;
+use App\Exports\ProductExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Tag;
-use App\NewWeigth;
 use App\Image;
 use App\Piece;
 use App\ProductPiece;
@@ -27,8 +28,6 @@ use Nexmo\Account\Price;
 
 class ProductController extends Controller
 {
-
-
     public function index(Request $request)
     {
 
@@ -63,6 +62,10 @@ class ProductController extends Controller
 
         return view('dashboard.products.index', compact('categories', 'products', 'countProducts'));
     } //end of index
+    public function export()
+    {
+        return Excel::download(new ProductExport, 'ProductExport.xlsx');
+    }
     public function category_list($id)
     {
         $categories = Category::where('section_id', $id)->get();
@@ -167,7 +170,8 @@ class ProductController extends Controller
     } // insert tags
     public function edit(Product $product)
     {
-
+        $byGramWeights = Weight::where('measure_unit', 'byGram')->get();
+        $byKilogramWeights = Weight::where('measure_unit', 'byKilogram')->get();
         $tag_ids = ProductTag::where('product_id', $product->id)->pluck('tag_id');
         $tag_selects  = Tag::whereIn('id', $tag_ids)->get();
         $tags = Tag::whereNotIn('id', $tag_ids)->get();
@@ -175,9 +179,9 @@ class ProductController extends Controller
         $categories = Category::get();
         $subCategories = SubCategory::get();
         $provenances = Provenance::get();
-
+        
         $productWeights = ProductWeight::where('product_id', $product->id)->get();
-        // dd($productWeights);
+
 
         $piece_id = ProductPiece::where('product_id', $product->id)->pluck('piece_id');
         $piece_selects  = Piece::whereIn('id', $piece_id)->get();
@@ -188,9 +192,9 @@ class ProductController extends Controller
     } //end of edit
     public function update(ProductRequest $request, Product $product)
     {
-
-        // dd($request->all());
         $request_data = $request->except(['gmweight', 'gmprice', 'kgprice', 'kgweight', 'image', 'nutritionFact', 'image_flag', 'images', 'tag_id', 'piece_id', 'title_en', 'title_ar', 'price_addtion', 'discount_addtion']);
+
+
 
         if ($request->nutritionFact) {
             if ($product->nutritionFact != 'default.png') {
@@ -211,14 +215,12 @@ class ProductController extends Controller
             } //end of inner if
             $request_data['image_flag'] = upload_img($request->image_flag, 'uploads/product_images/', 600);
         } //end of external if
-
-
         if($request->measr_unit == 'per_unit'){
             $request_data['unitValue'] = 1;
             $product->weights()->detach();
         }
-
-
+        
+        
 
         $product->update($request_data);
         if ($request->tag_id) {
@@ -242,9 +244,11 @@ class ProductController extends Controller
             Addition::where('product_id', $product->id)->delete();
             $this->addtion_product($request->price_addtion, $product->id);
         } //end of piece_id
+        
         $product->provenance_id = $request->provenance_id;
 
         $product->save();
+        
         if($request->measr_unit == 'byGram'){
 
             $request_data['measr_unit'] = 'byGram';
@@ -264,7 +268,7 @@ class ProductController extends Controller
 
 
         session()->flash('success', __('site.updated_successfully'));
-        return redirect()->route('dashboard.products.index');
+        return redirect()->back();
     } //end of update
     public function destroy(Product $product)
     {

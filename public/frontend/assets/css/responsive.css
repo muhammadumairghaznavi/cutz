@@ -363,8 +363,8 @@
     .sec-seafood-packaged.parallax-window-two,
     .sec-counter.parallax-window-two,
     .sec-poultry-packaged.parallax-window-two {
-        min-height: 500px;
-        padding: 6rem 0;
+        /*min-height: 500px;*/
+        /*padding: 6rem 0;*/
     }
     .parallax-window-two .hvh-100,
     .sec-counter .hvh-100,
@@ -597,6 +597,7 @@
         bottom: 0 !important;
         will-change: auto !important;
         /* min-height: auto; */
+        min-height: 160px;
         background-size: cover !important;
     }
     .care-icons i {

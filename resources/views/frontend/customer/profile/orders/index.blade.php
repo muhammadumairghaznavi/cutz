@@ -40,7 +40,7 @@ $profile_page='orders';
                                     <tr>
                                         <td># {{$order->id}}</td>
                                         <td> {{$order->total}} {{__('site.'.currncy())}}</td>
-                                        <td>{{$order->status}}</td>
+                                        <td>{{ __('site.' . $order->status) }}</td>
 
                                         <td> {{ \Carbon\Carbon::parse($order->created_at)->diffForHumans() }}</td>
                                          <td>

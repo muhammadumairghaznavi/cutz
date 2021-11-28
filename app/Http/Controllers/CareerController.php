@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Career;
 use Illuminate\Http\Request;
-use App\Providers\SweetAlertServiceProvider;
+// use App\Providers\SweetAlertServiceProvider;
 use Redirect;
 use SweetAlert;
 use Alert;

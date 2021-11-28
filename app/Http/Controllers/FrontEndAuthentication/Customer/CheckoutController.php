@@ -46,7 +46,7 @@ class CheckoutController extends Controller
         ]);
 
 
-      //  createAddressRms($address->id);
+        createAddressRms($address->id);
 
 
         $delivery_cost = $this->calculateDeliveryCostWithAddress($request->city_id);
@@ -224,15 +224,15 @@ class CheckoutController extends Controller
 
 
         //call API RMS Integration
-        // if ($_SERVER['REMOTE_ADDR'] !== '127.0.0.1')
-        //     createOrderRms($order->id);
+        if ($_SERVER['REMOTE_ADDR'] !== '127.0.0.1')
+            createOrderRms($order->id);
 
 
-        try {
-            Mail::to(['mahmouddief0@gmail.com', 'mm@g.com'])->send(new CutzInvoiceConfirmation($order));
-        } catch (Exception $e) {
-            Log::info($e->getMessage());
-        }
+        // try {
+        //     Mail::to([$order->customer_email, 'callcenter@cutz.com.eg'])->send(new CutzInvoiceConfirmation($order));
+        // } catch (Exception $e) {
+        //     Log::info($e->getMessage());
+        // }
 
         $this->sendMailAfterCreateOrder($order);
 

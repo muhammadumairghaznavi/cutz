@@ -35,9 +35,9 @@
                                     <div class="txt">
                                         <a
                                             href="{{ route('product_details', ['id' => $cart->product->id, 'slug' => make_slug($cart->product->title)]) }}">{{ $cart->product->title }}</a>
-                                        {{-- @if (!$cart->productWeight_id) --}}
-                                        {{-- <p class="qty">
-                                        {{ $cart->type ? 'wheight  = ' . $cart->type . ' G' : '' }}</p> --}}
+                                        <!--{{-- @if (!$cart->productWeight_id) --}}-->
+                                        <!--{{-- <p class="qty">-->
+                                        <!--{{ $cart->type ? 'wheight  = ' . $cart->type . ' G' : '' }}</p> --}}-->
                                         @if ($cart->productWeight_id)
                                             <p class="qty"> @lang('site.weights') =
                                                 {{ $cart->productWeight->weight->title }} </p>
@@ -68,9 +68,9 @@
                                         @endif
 
 
-                                        {{-- @else
-                                         <p class="qty">{{$cart->productWeight->price}}*{{$cart->qty}}</p>
-                                    @endif --}}
+                                    <!--    {{-- @else-->
+                                    <!--     <p class="qty">{{$cart->productWeight->price}}*{{$cart->qty}}</p>-->
+                                    <!--@endif --}}-->
 
                                         <p class="price">
                                             {{-- {{ $cart->type ? ($cart->product->Total * $cart->qty * (int) $cart->type) / 1000 : $cart->product->Total * $cart->qty }}{{ __('site.' . currncy()) }} --}}

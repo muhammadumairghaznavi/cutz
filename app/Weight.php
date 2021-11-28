@@ -20,7 +20,8 @@ class Weight extends Model
     {
         return $this->hasMany(ProductWeight::class);
     } //end fo productWeights
-
+    
+    
     public function products(){
         return $this->belongsToMany(Product::class, 'product_weights', 'weight_id', 'product_id')->withPivot('price')->withTimestamps();
     }

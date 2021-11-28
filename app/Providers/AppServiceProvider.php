@@ -56,6 +56,11 @@ class AppServiceProvider extends ServiceProvider
 
         ############### End Model ###################
 
+if (config('app.debug')) {
+    error_reporting(E_ALL & ~E_USER_DEPRECATED);
+} else {
+    error_reporting(0);
+}
 
 
 

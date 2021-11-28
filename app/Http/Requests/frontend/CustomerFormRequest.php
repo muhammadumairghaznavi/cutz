@@ -27,7 +27,7 @@ class CustomerFormRequest extends FormRequest
     public function createRules()
     {
         $this->rules += [
-            'email' => 'required|unique:customers,email',
+            //'email' => 'required|unique:customers,email',
             'phone' => 'required|unique:customers',
             'password' => ['required', 'string', 'min:6'],
             'password_confirmation' => ['required', 'same:password', 'min:6'],

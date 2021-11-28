@@ -12,7 +12,11 @@
         <ul>
             <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
             <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
-            <li><a href="{{ route('products') }}">@lang('site.products')</a></li>
+            <li><a>{{$product->section->title ?? 'لا يوجد'}} </a></li>
+            <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
+            <li><a>{{$product->category->title ?? 'لا يوجد'}} </a></li>
+            <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
+            <li><a>{{ $product->subCategory->title ?? 'لا يوجد' }} </a></li>
             <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
             <li><a>{{ $product->title }}</a></li>
         </ul>

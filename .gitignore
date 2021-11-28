@@ -15,5 +15,3 @@ storage/*.key
 Homestead.yaml
 Homestead.json
 /.vagrant
-*.log
-*.log

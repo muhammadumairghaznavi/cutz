@@ -20,8 +20,6 @@ class CartController extends Controller
     }
     public function create(Request $request)
     {
-
-        // dd($request->all());
         if ($request->cart) {
             $cart_products =  json_decode($request->cart,true);
             foreach ($cart_products as $product) {
@@ -38,9 +36,7 @@ class CartController extends Controller
             return $q->where('type',$request->type);
         })->first();
 
-
-
-        if ($findCart) {
+        if ($findCart ) {
 
             $findCart->update(['qty' => $request->qty]);
             // session()->flash('success', __('site.actually_added_successfuly'));
@@ -67,7 +63,6 @@ class CartController extends Controller
             'productWeight_id' => $request->productWeight_id,
             'type' => null,
             'qty' => $request->qty,
-
         ]);
         if ($request->addition_id) {
             $this->CartDetail($cart->id, $request->addition_id, $request->qty);

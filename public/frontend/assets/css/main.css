@@ -435,6 +435,12 @@ header.fixed .dropdown_menu {
     transition: 0.3s;
 }
 
+.prices label {}
+
+.prices del {
+    color: white;
+}
+
 .has_dropdown:hover .in_drb,
 .has-dropdown:hover .in_drb {
     opacity: 1;
@@ -983,7 +989,7 @@ body.overlay::before {
     line-height: 30px;
     letter-spacing: 1px;
     font-size: 1rem;
-    margin-top: 1.5rem;
+    /*margin-top: 1.5rem;*/
 }
 
 .home-slider.owl-theme .owl-dots {
@@ -1472,6 +1478,7 @@ footer p {
     height: 50px;
     line-height: 50px;
     text-align: center;
+    padding: 0px;
     border-radius: 50%;
     transition: .4s;
     font-size: 1.8rem;
@@ -1494,8 +1501,8 @@ footer p {
 }
 
 .social-footer li i.fa-instagram {
-    background-color: #e95950;
-    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    /*background-color: #e95950;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);*/
 }
 
 .social-footer li i.fa-whatsapp {
@@ -2433,7 +2440,7 @@ input[type="submit"].btn-filter:hover {
 
 .prices del {
     font-size: 1.2rem;
-    color: var(--black);
+    color: white;
 }
 
 .item-product .add-cart {
@@ -2906,7 +2913,7 @@ input[type="submit"].btn-filter:hover {
 
 .product-desc .txt ul li {
     line-height: 30px;
-    color: #666;
+    color: #fff;
     font-size: 1rem;
     font-weight: 300;
 }
@@ -3276,12 +3283,6 @@ input[type="submit"].btn-filter:hover {
 .sidebar-profile strong {
     color: var(--main);
     font-weight: bold;
-}
-
-.prices label {}
-
-.prices del {
-    color: white;
 }
 
 .user-name {
@@ -4703,7 +4704,7 @@ input[type="submit"].btn-filter:hover {
 }
 
 .home-slider .item-txt {
-    /*position: absolute;*/
+    position: absolute;
     top: 45%;
     left: 100px;
     transform: translateY(-50%);
@@ -4761,7 +4762,7 @@ input[type="submit"].btn-filter:hover {
     line-height: 30px;
     letter-spacing: 1px;
     font-size: 1rem;
-    margin-top: 1.5rem;
+    /*margin-top: 1.5rem;*/
 }
 
 .home-slider.owl-theme .owl-dots {
@@ -5191,3 +5192,15 @@ input[type="submit"].btn-filter:hover {
     font-size: 45px;
     max-width: 100%;
 }
+
+
+@media (max-width: 640px) {
+    #sec_n_idxxx{
+         background-image: url('https://cutz.com.eg/frontend/assets/imgs/Image2.png');
+         background-size: cover; background-position: center center;
+    }
+    
+    
+}
+
+

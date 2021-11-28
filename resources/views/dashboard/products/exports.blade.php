@@ -5,6 +5,7 @@
           <th>idRms</th>
           <th>@lang('site.category')</th>
           <th>@lang('site.name')</th>
+          <th>@lang('site.sku')</th>
           {{-- <th>@lang('site.description')</th> --}}
           <th>@lang('site.price')</th>
           <th>@lang('site.status')</th>
@@ -29,6 +30,10 @@
           </td>
           <td>
               {{ $product->title }}</td>
+          <td>
+              {{ $product->sku}}
+          </td>
+              
           <td>
               {{ $product->Total}} {{__('site.'.currncy())}}/ {{$product->unitValue}}-{{$product->measr_unit}}
           </td>

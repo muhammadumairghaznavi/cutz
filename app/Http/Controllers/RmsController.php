@@ -11,7 +11,7 @@ use App\ProductTranslation;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
-
+use App\Weight;
 class RmsController extends Controller
 {
     public function updateRms()
@@ -23,6 +23,7 @@ class RmsController extends Controller
         $product_id = [
             248, 249, 257, 261, 262, 288, 296, 304, 306, 307, 323, 327, 329, 338, 339, 340, 342, 343, 344, 345, 350, 351, 352, 354, 356, 712, 713, 719, 721, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 738, 739, 776, 777, 780, 781, 782, 784, 62, 63, 64, 65, 66, 67, 82, 83, 84, 85, 106, 107, 109, 110, 111, 113, 114, 102, 88, 90, 91, 92, 72, 73, 74, 77, 78, 79, 130, 132, 135, 154, 155, 156, 140, 141, 142, 144, 145, 146, 125, 126, 127, 149, 115, 116, 117, 118, 119, 136, 137, 138, 139, 160, 161, 162, 163, 164, 165, 376, 377, 381, 382, 385, 386, 675, 681, 704, 112, 120, 166, 225, 226, 227, 228, 229, 230, 231, 232, 233, 235, 237, 238, 239, 240, 241, 242, 244, 245, 246, 358, 359, 772, 771, 770
         ];
+        
         for ($i = 0; $i <= count($rmsId); $i++) {
             //  dd($rmsId[$i], $product_id[$i]);
             Product::where('id', $product_id[$i])->update([
@@ -33,9 +34,10 @@ class RmsController extends Controller
     public function rmsApiGetItems()
     {
         // return 'Please Contact With Developer ';
+     
         $myBody1 = [];
         $client = new \GuzzleHttp\Client();
-        $date = Carbon::now();
+        $date = Carbon::yesterday();
         // $link = 'http://41.33.56.19/api/get_items.php';
         $link = 'http://41.33.56.19/api/get_items.php?lastupdated=' . $date->toDateTimeString();
         $response = $client->request(
@@ -44,10 +46,13 @@ class RmsController extends Controller
             ['json' => $myBody1]
         );
         $data = json_decode($response->getBody()->getContents());
+       
         foreach ($data as $items) {
             foreach ($items  as $RmsProduct) {
+                  
                 $check = Product::where('idRms', $RmsProduct->ID)->where('sku', $RmsProduct->sku)->first();
-                // dd($RmsProduct->ID);
+              
+              
                 if (!$check) {
                     $create = Product::where('idRms', '!=', $RmsProduct->ID)->create(
                         [
@@ -67,14 +72,57 @@ class RmsController extends Controller
                     );
                     $create->save();
                 } else {
-                    Product::where('idRms', $RmsProduct->ID)->update(
-                        [
-                            'idRms' =>  $RmsProduct->ID,
-                            'sku' =>  $RmsProduct->sku,
-                            'price' =>  $RmsProduct->MainPrice,
-                            'discount' =>  $RmsProduct->SalePrice,
-                        ]
-                    ); //end of update product
+                    
+                    // Product::where('idRms', $RmsProduct->ID)->update(
+                    //     [
+                    //         'idRms' =>  $RmsProduct->ID,
+                    //         'sku' =>  $RmsProduct->sku,
+                    //         'price' =>  $RmsProduct->MainPrice,
+                    //         'discount' =>  $RmsProduct->SalePrice,
+                    //     ]
+                    // );
+                   
+                    // $weight = Weight::get();
+                     $weight = \DB::table('product_weights')->where('product_id',$check->id)->get();
+                  
+                    // \DB::table('product_weights')->where('product_id',$check->id)->delete();
+                    foreach( $weight as $weight_ke => $weight_va)
+                    {
+                      
+                        $we =  \DB::table('weights')->where('id',$weight_va->weight_id)->first();
+                       
+                   
+                        if( $we->measure_unit == "byGram")
+                        {
+                            
+                          
+                            $a = 1000;
+                      
+                            $price_by_gram = ($RmsProduct->MainPrice/1000)* (int)  $we->title;
+                            
+                            
+                            $data = array(
+                                'product_id' => $check->id,
+                                'weight_id' => $weight_va->id,
+                                'price' =>  $price_by_gram,
+                                'updated_at' => Carbon::now()
+                                );
+                            \DB::table('product_weights')->where('id',$weight_va->id)->update( $data);
+                            
+                           
+                            
+                           
+                        }
+                    }
+                 
+                    
+                    
+                    //end of update product
+                    
+                    
+                    
+                    
+                      
                     // ProductTranslation::where('product_id', $check->id)->where('locale', 'en')->update([
                     //     'title' => $RmsProduct->title,
                     // ]);
@@ -127,7 +175,7 @@ class RmsController extends Controller
                     }
                 }
             }
-            return 'Data Saved Correctly ';
+            return 'Data Saved Correctly';
         }
     } //end of  updateApiRms
     public function customerRms($id)
@@ -150,7 +198,8 @@ class RmsController extends Controller
         );
         $data = json_decode($response->getBody()->getContents());
         dd("created");
-    }  ///end of  customerUpdate
+    }  
+    ///end of  customerUpdate
     public function updateStroresRms()
     {
         // return 'Please Contact With Developer ';

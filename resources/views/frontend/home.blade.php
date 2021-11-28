@@ -13,36 +13,15 @@
         @endif
         <!-- START => Home Slider -->
         <section class="sec-slider">
-            <div class="container-fluid">
-                <!-- Block Item -->
-                <video autoplay muted playsinline loop style="pointer-events: none;  height: 100%; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <source src="{{ 'farzana.mp4' }}" type="video/mp4">
+            <div class="container-fluid"
+                style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; margin-right: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: -10px;">
+                <video autoplay muted playsinline loop
+                    style="pointer-events: none;  height: 100%; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    <source src="{{ 'livevideo.mp4' }}" type="video/mp4">
                     <source src="movie.ogg" type="video/ogg">
                     Your browser does not support the video tag.
                 </video>
-                <!-- //=> Block Item -->
-                {{-- @foreach ($sliders as $item)
-                        <!-- Block Item -->
-                        <div class="item" style="background-image: url('{{ $item->image_path }}');">
-                            <!--<img src="" class="img-fluid img-slide" alt="Image"> -->
-                            <div class="item-txt text-left">
-                                <h1 data-animation-in="fadeInDown animate-300ms" data-animation-out="">
-                                    <span>{{ $item->title }}</span>
-                                    <span>{{ $item->short_description }}</span>
-                                </h1>
-                                <div class="fade-text">
-                                    <p data-animation-in="fadeInDown animate-500ms" data-animation-out="">
-                                        {{ $item->description }}
-                                    </p>
-                                </div>
-                                @if ($item->link)
 
-                                    <a href="{{ $item->link }}" class="btn-slider">Shop Now</a>
-                                @endif
-                            </div>
-                        </div>
-                        <!-- //=> Block Item -->
-                    @endforeach --}}
             </div>
         </section>
         <!-- //END => Home Slider -->
@@ -60,26 +39,15 @@
 
 
         <!-- START => Meat packaged -->
-        <section class="sec-meat-packaged bg-overlay parallax-window-two" data-speed=".2" data-parallax="scroll"
-            data-image-src="{{ url('/') }}/frontend/assets/imgs/meats.jpeg">
-            <div class="container-fluid">
-                <div class="row no-gutters">
-                    <div class="col-md-7"></div>
-                    <div class="col-md-5 d-flex align-items-center justify-content-center hvh-100">
-                        <div class="txt">
-                            <strong class="h1 d-block">
-                                Meat is packaged in <span>various types</span> of containers
-                            </strong>
-                            <ul>
-                                <li>Beef Meat: General cuts / Loin and Chuck</li>
-                                <li>Veal Meet: General cuts / Loin and Chuck</li>
-                                <li>Lamp Meat: Lamp Chops / Whole Lamp</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        </div>
         </section>
+        <a href="search?section_id=11">
+            <section class="sec-meat-packaged parallax-window-two"
+                style="background-image:url('{{ url('/') }}/frontend/assets/imgs/meatbg.png')">
+
+            </section>
+        </a>
         <!-- //END => Meat packaged -->
         @if (count($bestSellers) > 0)
             <section class="sec-related sec_seller_bg py-5">
@@ -123,87 +91,41 @@
                                 </div>
                             </div>
                         @endforeach
+
+
+
+
                     </div>
+
                 </div>
             </section>
         @endif
+
+
+
         <!-- START => Poultry is packaged -->
-        <section class="sec-poultry-packaged parallax-window-two" data-speed=".2" data-parallax="scroll"
-            data-image-src="{{ url('/') }}/frontend/assets/imgs/breast-1-2.jpg">
-            <div class="container-fluid">
-                <div class="row no-gutters">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7 d-flex align-items-center justify-content-center hvh-100">
-                        <div class="txt" style="padding-top: 50px;">
-                            <strong class="h1 d-block">
-                                @lang('site.meats')
-                            </strong>
-                            <!--<ul>-->
-                            <!--    <li>clean overall appearance, free from blemishes or bruises.</li>-->
-                            <!--</ul>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <a href="search?section_id=14">
+            <section class="sec-poultry-packaged parallax-window-two"
+                style="background-image:url('{{ url('/') }}/frontend/assets/imgs/Poultry.png')">
+
+            </section>
+        </a>
         <!-- //END => Poultry is packaged -->
 
-        <!-- START => Counter -->
-        {{-- <section class="sec-counter parallax-window-two" data-speed=".2" data-parallax="scroll"
-            data-image-src="{{ url('/') }}/frontend/assets/imgs/bg-counter.jpg">
-            <div class="container">
-                <div class="txt text-center">
-                    <div class="row hvh-100 align-items-center">
-                        <div class="col-md-6">
-                            <div class="counter-boxes row">
-                                <div class="col-md-6 text-center">
-                                    <a href="{{ route('recipes') }}" class="counter-box">
-                                        <strong class="h1 d-block">0</strong>
-                                        <strong class="h6 d-block">@lang('site.CheckOurRecipes')</strong>
-                                    </a>
-                                    <!--<a href="">Recipes</a>-->
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <a href="{{ route('blogs') }}" class="counter-box">
-                                        <strong class="h1 d-block">{{ $countUsefulInformation }}</strong>
-                                        <strong class="h6 d-block">@lang('site.Check_Our_Useful_information')</strong>
-                                    </a>
-                                    <!--<a href="">Useful information</a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6"></div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- //END => Counter -->
+
 
         <!-- START => Seafood packaged -->
-        <section class="sec-seafood-packaged parallax-window-two" data-speed=".2" data-parallax="scroll"
-            data-image-src="{{ url('/') }}/frontend/assets/imgs/bg-seafood.jpg">
-            <div class="container-fluid">
-                <div class="row no-gutters">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6 d-flex align-items-center justify-content-center hvh-100">
-                        <div class="txt" style="padding-top: 50px;">
-                            <strong class="h1 d-block">
-                                {{-- Wide range of <span>seafood varieties</span> from the best spots all over the world to your
-                                dining table. --}}
-                                @lang('site.seafoodvariety')
-                            </strong>
-                            <!--<ul>-->
-                            <!--    <li>Proud of providing premium fresh and carefully selected seafood and fish from the best spots-->
-                            <!--        all over the world to the market.</li>-->
-                            <!--</ul>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
+        <a href="search?section_id=13">
+            <section class="sec-seafood-packaged parallax-window-two"
+                style="background-image:url('{{ url('/') }}/frontend/assets/imgs/seafoodbg.png')">
+
+            </section>
+        </a>
         <!-- //END => Seafood packaged -->
         <section class="sec-care-customers parallax-window-two" data-speed=".2" data-parallax="scroll"
-            data-image-src="{{ url('/') }}/frontend/assets/imgs/bg.jpeg"
+            data-image-src="{{ url('/') }}/frontend/assets/imgs/ourclientsays.jpeg"
             style="background-size: cover; display: grid; align-items: center; justify-content: center; height: 100vh;">
 
             <div class="txt text-center">

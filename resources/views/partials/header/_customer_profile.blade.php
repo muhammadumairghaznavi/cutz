@@ -161,11 +161,11 @@ if (authCustomer() != null) {
             @if (LaravelLocalization::getCurrentLocale() == 'ar')
                 <a rel="alternate" class="langs" hreflang="ar" data-toggle="tooltip" data-placement="bottom"
                     title="English" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
-                    <i class="fa fa-globe"></i>&nbsp;@lang('site.english')</a>
+                    <i class="fa fa-globe">@lang('site.english')</i></a>
             @elseif(LaravelLocalization::getCurrentLocale()=='en')
                 <a rel="alternate " class="langs" hreflang="ar" data-toggle="tooltip" data-placement="bottom"
                     title="" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">
-                    <i class="fa fa-globe"></i>&nbsp; @lang('site.arabic') </a>
+                    <i class="fa fa-globe">@lang('site.arabic')</i> </a>
             @endif
         </div>
 
