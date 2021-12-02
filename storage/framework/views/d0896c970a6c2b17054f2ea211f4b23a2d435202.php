@@ -324,7 +324,7 @@
                         </li>
 
                         <li class="has_dropdown">
-                             <a href="<?php echo e(route('about')); ?>"><?php echo app('translator')->getFromJson('site.about'); ?> CUT<strong>Z</strong></a>
+                             <a href="#"><?php echo app('translator')->getFromJson('site.about'); ?> CUT<strong>Z</strong></a>
                                 <ul class="dropdown_menu in_drb">
                                     <li><a href="<?php echo e(route('about')); ?>"><?php echo app('translator')->getFromJson('site.about'); ?></a></li>
                                     <li><a href="<?php echo e(route('reviews_page')); ?>"><?php echo app('translator')->getFromJson('site.reviews'); ?></a></li>

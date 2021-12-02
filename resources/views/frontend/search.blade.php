@@ -8,11 +8,13 @@
 @section('content')
     <!-- START => Breadcrumb -->
     <div class="breadcrumb-pages" style="background-image: url({{ url('/') }}/frontend/assets/imgs/bg-pages.jpg)">
-        <strong class="h1 d-block">@lang('site.search')</strong>
+        <strong class="h1 d-block">@lang('site.Our Products')</strong>
         <ul>
             <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
             <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
-            <li><a href="{{ route('products') }}">@lang('site.search')</a></li>
+            <li><a>{{$products[0]->section->title ?? 'لا يوجد'}} </a></li>
+            <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
+            <li><a>{{$products[0]->category->title ?? 'لا يوجد'}} </a></li>
         </ul>
     </div>
     <!-- //END => Breadcrumb -->

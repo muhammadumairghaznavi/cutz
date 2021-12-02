@@ -12,15 +12,32 @@
         <?php endif; ?>
         <!-- START => Home Slider -->
         <section class="sec-slider">
-            <div class="container-fluid"
-                style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; margin-right: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: -10px;">
-                <video autoplay muted playsinline loop
-                    style="pointer-events: none;  height: 100%; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <source src="<?php echo e('livevideo.mp4'); ?>" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="container-fluid">
+                <div id="slider-home" class="home-slider owl-carousel owl-theme">
+                    <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <!-- Block Item -->
+                        <div class="item" style="background-image: url('<?php echo e($item->image_path); ?>');">
+                            <!--<img src="" class="img-fluid img-slide" alt="Image"> -->
+                            <div class="item-txt text-left">
+                                <h1 data-animation-in="fadeInDown animate-300ms" data-animation-out="">
+                                    <span><?php echo e($item->title); ?></span>
+                                    <span><?php echo e($item->short_description); ?></span>
+                                </h1>
+                                <div class="fade-text">
+                                    <p data-animation-in="fadeInDown animate-500ms" data-animation-out="">
+                                        <?php echo e($item->description); ?>
 
+                                    </p>
+                                </div>
+                                <?php if($item->link): ?>
+
+                                    <a href="<?php echo e($item->link); ?>" class="btn-slider">Shop Now</a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <!-- //=> Block Item -->
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
             </div>
         </section>
         <!-- //END => Home Slider -->
@@ -103,7 +120,7 @@
 
 
         <!-- START => Poultry is packaged -->
-        <a href="">
+        <a href="search?section_id=14">
             <section class="sec-poultry-packaged parallax-window-two"
                 style="background-image:url('<?php echo e(url('/')); ?>/frontend/assets/imgs/Poultry.png')">
 
@@ -116,7 +133,7 @@
         <!-- START => Seafood packaged -->
 
 
-        <a href="">
+        <a href="search?section_id=13">
             <section class="sec-seafood-packaged parallax-window-two"
                 style="background-image:url('<?php echo e(url('/')); ?>/frontend/assets/imgs/seafoodbg.png')">
 

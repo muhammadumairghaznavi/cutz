@@ -11,7 +11,9 @@
         <ul>
             <li><a href="<?php echo e(route('home')); ?>"><?php echo app('translator')->getFromJson('site.home'); ?></a></li>
             <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
-            <li><a href="<?php echo e(route('products')); ?>"><?php echo app('translator')->getFromJson('site.search'); ?></a></li>
+            <li><a><?php echo e($products[0]->section->title ?? 'لا يوجد'); ?> </a></li>
+            <li class="mx-2"> <i class="fa fa-chevron-right fa-sm"></i> </li>
+            <li><a><?php echo e($products[0]->category->title ?? 'لا يوجد'); ?> </a></li>
         </ul>
     </div>
     <!-- //END => Breadcrumb -->

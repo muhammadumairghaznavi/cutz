@@ -13,15 +13,31 @@
         @endif
         <!-- START => Home Slider -->
         <section class="sec-slider">
-            <div class="container-fluid"
-                style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; margin-right: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: -10px;">
-                <video autoplay muted playsinline loop
-                    style="pointer-events: none;  height: 100%; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                    <source src="{{ 'livevideo.mp4' }}" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="container-fluid">
+                <div id="slider-home" class="home-slider owl-carousel owl-theme">
+                    @foreach ($sliders as $item)
+                        <!-- Block Item -->
+                        <div class="item" style="background-image: url('{{ $item->image_path }}');">
+                            <!--<img src="" class="img-fluid img-slide" alt="Image"> -->
+                            <div class="item-txt text-left">
+                                <h1 data-animation-in="fadeInDown animate-300ms" data-animation-out="">
+                                    <span>{{ $item->title }}</span>
+                                    <span>{{ $item->short_description }}</span>
+                                </h1>
+                                <div class="fade-text">
+                                    <p data-animation-in="fadeInDown animate-500ms" data-animation-out="">
+                                        {{ $item->description }}
+                                    </p>
+                                </div>
+                                @if ($item->link)
 
+                                    <a href="{{ $item->link }}" class="btn-slider">Shop Now</a>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- //=> Block Item -->
+                    @endforeach
+                </div>
             </div>
         </section>
         <!-- //END => Home Slider -->

@@ -324,7 +324,7 @@
                         </li>
 
                         <li class="has_dropdown">
-                             <a href="{{ route('about')}}">@lang('site.about') CUT<strong>Z</strong></a>
+                             <a href="#">@lang('site.about') CUT<strong>Z</strong></a>
                                 <ul class="dropdown_menu in_drb">
                                     <li><a href="{{ route('about')}}">@lang('site.about')</a></li>
                                     <li><a href="{{ route('reviews_page')}}">@lang('site.reviews')</a></li>
